@@ -1,5 +1,26 @@
- *{
+ *{ background-color:azure;
   font-family: "Momo Trust Display", sans-serif;
   font-weight: 400;
   font-style: normal;
+
 }
+
+header {
+    border-radius: 2rem;
+    background-color: darkgrey;
+    padding-left: 2rem;
+    line-height: 2rem;
+    
+
+
+}
+header h1{
+    background-color: blueviolet;
+}
+ header img{ position: relative;
+            width: 100px;
+            left:65%;
+            top: -300px;
+            width: 300px;
+ }
+
