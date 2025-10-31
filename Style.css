@@ -1,6 +1,6 @@
  *{ background-color:azure;
   font-family: "Momo Trust Display", sans-serif;
-  font-weight: 400;
+  font-weight: 100;
   font-style: normal;
 
 }
@@ -10,6 +10,7 @@ header {
     background-color: darkgrey;
     padding-left: 2rem;
     line-height: 2rem;
+    height: 400px;
     
 
 
@@ -18,9 +19,14 @@ header h1{
     background-color: blueviolet;
 }
  header img{ position: relative;
-            width: 100px;
-            left:65%;
-            top: -300px;
-            width: 300px;
+            width: 400px;
+            left:67%;
+            top: -340px;
+            border-radius: 3rem;
+            
+ }
+
+ main {
+
  }
 
