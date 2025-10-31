@@ -2,7 +2,8 @@
   font-family: "Momo Trust Display", sans-serif;
   font-weight: 400;
   font-style: normal;
-
+  background-image: url(img/code6.jpg);
+  
 }
 
 header {
@@ -11,12 +12,14 @@ header {
     padding-left: 2rem;
     line-height: 2rem;
     height: 400px;
+    background-image: none;
     
 
 
 }
 header h1{
-    background-color: blueviolet;
+    background-color: blueviolet;background-image: none;
+
 }
  header img{ position: relative;
             width: 400px;
@@ -32,30 +35,31 @@ header h1{
     padding-left: 2%;
     border-radius: 1rem;
     line-height: 2rem;
+    background-image: none;
     
 }
 .biblio h2 {
-    background-color:blueviolet
+    background-color:blueviolet;
+    background-image: none;
 }
  
 .biblio p{
     color: darkgoldenrod;
 }
 footer {
-    padding: 2%;
+    padding-left: 2%;
+    border-radius: 2rem;
+    height: 50%;
+    background-color:blueviolet;
+    background-image: none;
+    line-height: 2rem;
 }
 
-@media (max-width: 600px) {
-  body {
-    font-size: 16px;
-    padding: 10px;
-  }
-  nav {
-    flex-direction: column;
-  }
+footer nav *{
+  background-color:darkgrey;
+  background-image: none;
 }
-
-img, video {
-  max-width: 100%;
-  height: auto;
+footer nav  {
+  background-color:darkgrey;
+  background-image: none;
 }
