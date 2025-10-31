@@ -1,13 +1,13 @@
  *{ background-color:azure;
   font-family: "Momo Trust Display", sans-serif;
-  font-weight: 100;
+  font-weight: 400;
   font-style: normal;
 
 }
 
 header {
     border-radius: 2rem;
-    background-color: darkgrey;
+    background-color:darkgrey;
     padding-left: 2rem;
     line-height: 2rem;
     height: 400px;
@@ -26,7 +26,24 @@ header h1{
             
  }
 
- main {
+.biblio {
+    background-color:darkgrey;
+    height: 440px;
+    padding-left: 2%;
+    border-radius: 1rem;
+    line-height: 2rem;
+    
+}
+.biblio h2 {
+    background-color:blueviolet
+}
+ 
+.biblio p{
+    color: darkgoldenrod;
+}
+footer {
+    padding: 2%;
+}
 
- }
+
 
