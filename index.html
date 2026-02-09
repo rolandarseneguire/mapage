@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roland GUIRE | Student in Computer Science</title>
+    <title>Arsene Roland GUIRE | Software Engineer</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,14 +11,15 @@
 
     <style>
         :root {
-            --primary: #2563eb;
-            --secondary: #1e293b;
-            --accent: #3b82f6;
+            --primary: #2563eb;    /* Bleu Professionnel */
+            --secondary: #0f172a;  /* Sombre Elegant */
+            --accent: #f97316;     /* Orange (Clin d'œil à Orange CI) */
             --bg: #f8fafc;
             --text: #334155;
             --white: #ffffff;
         }
 
+        html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -32,12 +33,12 @@
         header {
             background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
             color: var(--white);
-            padding: 5rem 1rem;
+            padding: 6rem 1rem;
             text-align: center;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
         }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
 
         .profile-section {
             display: flex;
@@ -48,69 +49,89 @@
         }
 
         .profile-img {
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            border: 4px solid rgba(255,255,255,0.3);
+            border: 6px solid rgba(255,255,255,0.2);
             object-fit: cover;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-img:hover { transform: scale(1.05); }
+
+        .info-card { text-align: left; max-width: 500px; }
+        .info-card h1 { font-size: 2.8rem; margin-bottom: 0.2rem; letter-spacing: -1px; }
+        .info-card .tagline { 
+            color: #bfdbfe; 
+            font-weight: 600; 
+            font-size: 1.3rem; 
+            margin-bottom: 1rem;
+            display: block;
         }
 
-        .info-card { text-align: left; }
-        .info-card h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .info-card p { opacity: 0.9; font-size: 1.1rem; }
-
         /* --- SECTIONS --- */
-        main { margin-top: -40px; margin-bottom: 4rem; }
+        main { margin-top: -50px; padding-bottom: 4rem; }
 
         section {
             background: var(--white);
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+            margin-bottom: 2.5rem;
         }
 
         h2 {
-            color: var(--primary);
+            color: var(--secondary);
             font-size: 1.8rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
-        h2::before {
+        h2::after {
             content: '';
-            width: 35px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 10px;
+            flex: 1;
+            height: 1px;
+            background: #e2e8f0;
         }
 
-        /* --- BADGES SKILLS --- */
+        /* --- SKILLS GRID --- */
+        .skills-group { margin-bottom: 2rem; }
+        .skills-group h3 { font-size: 1rem; text-transform: uppercase; color: #94a3b8; margin-bottom: 1rem; letter-spacing: 1px; }
+        
         .skills-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 1.5rem;
+            gap: 12px;
         }
 
         .skill-badge {
-            background: #eff6ff;
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            border: 1px solid #dbeafe;
-            transition: 0.3s;
+            background: #f1f5f9;
+            color: var(--secondary);
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: 1px solid #e2e8f0;
+            transition: 0.3s all ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .skill-badge:hover {
             background: var(--primary);
             color: white;
+            border-color: var(--primary);
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+        }
+
+        .skill-badge.highlight {
+            border: 1px solid var(--primary);
+            color: var(--primary);
         }
 
         /* --- FOOTER --- */
@@ -118,36 +139,44 @@
             background: var(--secondary);
             color: var(--white);
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 5rem 1rem;
         }
 
+        .contact-links { margin: 2rem 0; }
         .contact-links a {
-            color: var(--accent);
+            color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 20px;
             font-weight: 500;
-        }
-
-        .btn-more {
-            display: inline-block;
-            background: var(--primary);
-            color: white !important;
-            padding: 12px 30px;
-            border-radius: 8px;
-            margin-top: 2rem;
+            padding: 10px 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
             transition: 0.3s;
         }
 
-        .btn-more:hover { filter: brightness(1.2); }
+        .contact-links a:hover { background: white; color: var(--secondary); }
 
-        /* --- ANIMATIONS --- */
+        .btn-cv {
+            display: inline-block;
+            background: var(--accent);
+            color: white !important;
+            padding: 15px 35px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+            transition: 0.3s;
+        }
+
+        .btn-cv:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
         .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 768px) {
             .profile-section { flex-direction: column; text-align: center; }
             .info-card { text-align: center; }
-            header { clip-path: none; padding: 3rem 1rem; }
+            header { clip-path: none; padding: 4rem 1rem; }
         }
     </style>
 </head>
@@ -159,8 +188,9 @@
                 <img src="img/photo1.jpg" alt="Arsene Roland GUIRE" class="profile-img">
                 <div class="info-card">
                     <h1>Arsene Roland GUIRE</h1>
-                    <p>Étudiant en Licence 3 Informatique</p>
+                    <span class="tagline">Software Engineer & ERP Manager</span>
                     <p>📍 Abidjan, Côte d'Ivoire</p>
+                    <p>🎓 Licence 3 Mathématiques-Informatique (UNA)</p>
                 </div>
             </div>
         </div>
@@ -168,39 +198,87 @@
 
     <main class="container">
         <section class="reveal">
-            <h2>Qui suis-je ?</h2>
+            <h2>À propos</h2>
             <p>
-                Je suis étudiant à l’<strong>Université Nangui Abrogoua</strong>, passionné par l'architecture logicielle et les nouvelles technologies. Mon parcours en <strong>Mathématiques-Informatique</strong> m'a permis de développer une rigueur scientifique que j'applique aujourd'hui dans le développement web et l'intelligence artificielle.
+                Expert en conception de solutions logicielles rigoureuses, je transforme des problématiques complexes en outils performants. Mon background académique à l'<strong>Université Nangui Abrogoua</strong> m'apporte une solide base algorithmique que j'applique au développement de systèmes <strong>SaaS</strong> sécurisés.
             </p>
             <p style="margin-top: 1rem;">
-                Spécialisé sur le framework <strong>Django</strong>, je m'intéresse particulièrement à la création d'outils éducatifs et à la vulgarisation informatique via ma chaîne YouTube. Mon approche repose sur la sécurité (HTTPS, gestion rigoureuse des données) et l'accessibilité.
+                Créateur du projet <strong>MonGérant</strong>, je me spécialise dans l'optimisation des bases de données et la sécurisation des échanges. Passionné par la transmission du savoir, je partage mes découvertes technologiques sur ma chaîne YouTube.
             </p>
         </section>
 
         <section class="reveal">
-            <h2>Compétences Techniques</h2>
-            <div class="skills-container">
-                <span class="skill-badge">Python / Django</span>
-                <span class="skill-badge">HTML5 / CSS3 (Responsive)</span>
-                <span class="skill-badge">JavaScript</span>
-                <span class="skill-badge">Git & GitHub</span>
-                <span class="skill-badge">Cybersécurité (HTTPS)</span>
-                <span class="skill-badge">IA & Data Science</span>
-                <span class="skill-badge">Traitement de Signal (Heaviside)</span>
-                <span class="skill-badge">Base de données (UUID)</span>
+            <h2>Expertises Techniques</h2>
+            
+            <div class="skills-group">
+                <h3>Développement Backend & Logiciel</h3>
+                <div class="skills-container">
+                    <span class="skill-badge highlight">🐍 Python / Django</span>
+                    <span class="skill-badge">🏗️ Architecture SaaS / ERP</span>
+                    <span class="skill-badge">⚙️ Modélisation (Merise/UML)</span>
+                    <span class="skill-badge">🛡️ Chiffrement (César/Logique)</span>
+                </div>
+            </div>
+
+            <div class="skills-group">
+                <h3>Gestion de Données & Infra</h3>
+                <div class="skills-container">
+                    <span class="skill-badge highlight">🆔 Base de données (UUID v4/v7)</span>
+                    <span class="skill-badge">📊 SQL & Optimisation d'Index</span>
+                    <span class="skill-badge">🐧 Linux / Bash</span>
+                    <span class="skill-badge">☁️ Déploiement Cloud</span>
+                </div>
+            </div>
+
+            <div class="skills-group">
+                <h3>Frontend & UI</h3>
+                <div class="skills-container">
+                    <span class="skill-badge">🎨 HTML5 / CSS3 Modern</span>
+                    <span class="skill-badge">📱 Responsive Design</span>
+                    <span class="skill-badge">⚡ JavaScript (ES6+)</span>
+                </div>
+            </div>
+
+            <div class="skills-group">
+                <h3>Mathématiques Appliquées</h3>
+                <div class="skills-container">
+                    <span class="skill-badge">📉 Traitement de Signal (Heaviside)</span>
+                    <span class="skill-badge">🧬 Algorithmique Avancée</span>
+                    <span class="skill-badge">🤖 IA & Data Science Basics</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2>Projet Signature</h2>
+            <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border-left: 5px solid var(--primary);">
+                <h3 style="color: var(--primary);">MonGérant (SaaS ERP)</h3>
+                <p style="margin-top: 5px; font-style: italic;">Système de gestion commerciale sécurisé.</p>
+                <ul style="margin: 15px 0 0 20px;">
+                    <li>Utilisation systématique des <strong>UUID</strong> pour la sécurité des tables.</li>
+                    <li>Backend robuste sous <strong>Django</strong> avec gestion de stock en temps réel.</li>
+                    <li>Architecture pensée pour la scalabilité des PME ivoiriennes.</li>
+                </ul>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p style="margin-bottom: 1rem; opacity: 0.7;">&copy; 2026 @rolandguire | Propriété Intellectuelle</p>
+            <h2 style="color: white; justify-content: center; margin-bottom: 2rem;">Travaillons ensemble</h2>
+            <p>Disponible pour des opportunités en Ingénierie Logicielle et Management de SI.</p>
+            
             <div class="contact-links">
-                <a href="mailto:guireroland623@gmail.com">Email</a>
-                <a href="tel:+2250769072597">Téléphone</a>
-                <a href="https://github.com/ton-pseudo" target="_blank">GitHub</a>
+                <a href="mailto:guireroland623@gmail.com">📧 Email</a>
+                <a href="https://github.com/ton-pseudo" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
+                <a href="https://www.youtube.com/@ton-canal" target="_blank">🎥 YouTube</a>
             </div>
-            <a href="home.html" class="btn-more">Découvrir mes projets</a>
+
+            <a href="CV_Arsene_Roland_GUIRE.pdf" class="btn-cv">Télécharger mon CV complet</a>
+            
+            <p style="margin-top: 4rem; opacity: 0.5; font-size: 0.8rem;">
+                &copy; 2026 Arsene Roland GUIRE | Développé avec rigueur et passion.
+            </p>
         </div>
     </footer>
 
@@ -215,7 +293,7 @@
             });
         };
         window.addEventListener("scroll", scrollReveal);
-        scrollReveal(); // Appel initial
+        scrollReveal(); 
     </script>
 </body>
 </html>
