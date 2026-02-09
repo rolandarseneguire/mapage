@@ -1,50 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>student of computer-science</title>
-    <link rel="stylesheet" href="Style.css">
+    <title>Roland GUIRE | Student in Computer Science</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --bg: #f8fafc;
+            --text: #334155;
+            --white: #ffffff;
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: var(--white);
+            padding: 5rem 1rem;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .info-card { text-align: left; }
+        .info-card h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .info-card p { opacity: 0.9; font-size: 1.1rem; }
+
+        /* --- SECTIONS --- */
+        main { margin-top: -40px; margin-bottom: 4rem; }
+
+        section {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '';
+            width: 35px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 10px;
+        }
+
+        /* --- BADGES SKILLS --- */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1.5rem;
+        }
+
+        .skill-badge {
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid #dbeafe;
+            transition: 0.3s;
+        }
+
+        .skill-badge:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--secondary);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        .contact-links a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+
+        .btn-more {
+            display: inline-block;
+            background: var(--primary);
+            color: white !important;
+            padding: 12px 30px;
+            border-radius: 8px;
+            margin-top: 2rem;
+            transition: 0.3s;
+        }
+
+        .btn-more:hover { filter: brightness(1.2); }
+
+        /* --- ANIMATIONS --- */
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .profile-section { flex-direction: column; text-align: center; }
+            .info-card { text-align: center; }
+            header { clip-path: none; padding: 3rem 1rem; }
+        }
+    </style>
 </head>
 <body>
-    <header> 
-       <p>
-        <h1>Welcome to my website !</h1>
-        Nom :  GUIRE  <br> Prenom :  ARSENE ROLAND <br> Université :  UNIVERSITE NANGUI ABROGOUA <br> Departement : SCIENCES FONDAMENTALES  ET APPLIQUEES  <br> Domaine études :  SCIENCES ET TECHNOLOGIES <br>Mention:  MATHEMATIQUES-INFORMATIQUE  <br> Parcours :  INFORMATIQUE <br> Niveau etude:  LICENCE 3 <br> Ville :  ABIDJAN <br> Pays:  COTE D'IVOIRE <br>
-        <img src="img/photo1.jpg"> 
-        </p>
+
+    <header>
+        <div class="container">
+            <div class="profile-section">
+                <img src="img/photo1.jpg" alt="Arsene Roland GUIRE" class="profile-img">
+                <div class="info-card">
+                    <h1>Arsene Roland GUIRE</h1>
+                    <p>Étudiant en Licence 3 Informatique</p>
+                    <p>📍 Abidjan, Côte d'Ivoire</p>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <main>
-          <section class="biblio">
-            <p>
+    <main class="container">
+        <section class="reveal">
             <h2>Qui suis-je ?</h2>
-            Je m'appelle Roland Arsene GUIRE, <br> étudiant en Licence 3 Informatique à l’Université Nangui Abrogoua, passionné par les sciences informatiques, les technologies web, la cybersécurité, l’intelligence artificielle, et le traitement des signaux numériques, notamment à travers des fonctions comme Heaviside. <br> Curieux et méthodique, je consacre mon temps à explorer les outils modernes de développement web, en particulier le framework Django, que j’utilise pour créer des applications dynamiques et éducatives.  <br> J’aime héberger mes projets sur GitHub Pages, en veillant à leur accessibilité, leur sécurité (HTTPS), et leur présentation professionnelle. Mon objectif est de bâtir un site personnel qui reflète mon parcours, mes compétences techniques, mes intérêts culturels et mon engagement communautaire. Je suis également actif sur YouTube, où je prépare des vlogs et tutoriels en informatique pour aider les apprenants francophones à mieux comprendre les concepts clés du numérique. Résilient face aux défis techniques, je transforme chaque erreur en opportunité d’apprentissage et de transmission. Mon ambition est de créer une plateforme inclusive et pédagogique, qui relie les savoirs académiques aux réalités culturelles africaines, tout en favorisant la collaboration à distance et l’autonomie numérique. Je crois fermement que la technologie peut être un levier puissant pour l’éducation, l’innovation et le progrès collectif.
-           </p>
-          </section>
+            <p>
+                Je suis étudiant à l’<strong>Université Nangui Abrogoua</strong>, passionné par l'architecture logicielle et les nouvelles technologies. Mon parcours en <strong>Mathématiques-Informatique</strong> m'a permis de développer une rigueur scientifique que j'applique aujourd'hui dans le développement web et l'intelligence artificielle.
+            </p>
+            <p style="margin-top: 1rem;">
+                Spécialisé sur le framework <strong>Django</strong>, je m'intéresse particulièrement à la création d'outils éducatifs et à la vulgarisation informatique via ma chaîne YouTube. Mon approche repose sur la sécurité (HTTPS, gestion rigoureuse des données) et l'accessibilité.
+            </p>
+        </section>
 
-
+        <section class="reveal">
+            <h2>Compétences Techniques</h2>
+            <div class="skills-container">
+                <span class="skill-badge">Python / Django</span>
+                <span class="skill-badge">HTML5 / CSS3 (Responsive)</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">Git & GitHub</span>
+                <span class="skill-badge">Cybersécurité (HTTPS)</span>
+                <span class="skill-badge">IA & Data Science</span>
+                <span class="skill-badge">Traitement de Signal (Heaviside)</span>
+                <span class="skill-badge">Base de données (UUID)</span>
+            </div>
+        </section>
     </main>
-    <br>
-    <footer> 
-        <br>
-        <nav>
-            @rolandguire 2025, tout droit reserver,propriéter intellectuelle. 
-            <br>
-            <a href="mailto:guireroland623@gmail.com">guireroland623@gmail.com</a>
-             <br>
-            <a href="tel:+225 0769072597">+225 0769072597</a> 
-            <br>
-            <a id="home" href="home.html">Voir plus</a>
-            <br><br>
-        </nav>
-        
+
+    <footer>
+        <div class="container">
+            <p style="margin-bottom: 1rem; opacity: 0.7;">&copy; 2026 @rolandguire | Propriété Intellectuelle</p>
+            <div class="contact-links">
+                <a href="mailto:guireroland623@gmail.com">Email</a>
+                <a href="tel:+2250769072597">Téléphone</a>
+                <a href="https://github.com/ton-pseudo" target="_blank">GitHub</a>
+            </div>
+            <a href="home.html" class="btn-more">Découvrir mes projets</a>
+        </div>
     </footer>
-    
+
+    <script>
+        const revealElements = document.querySelectorAll(".reveal");
+        const scrollReveal = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < window.innerHeight - 100) {
+                    el.classList.add("active");
+                }
+            });
+        };
+        window.addEventListener("scroll", scrollReveal);
+        scrollReveal(); // Appel initial
+    </script>
 </body>
 </html>
