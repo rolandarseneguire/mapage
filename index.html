@@ -1,299 +1,295 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arsene Roland GUIRE | Software Engineer</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Arsène Roland GUIRE | Fullstack Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --primary: #2563eb;    /* Bleu Professionnel */
-            --secondary: #0f172a;  /* Sombre Elegant */
-            --accent: #f97316;     /* Orange (Clin d'œil à Orange CI) */
-            --bg: #f8fafc;
-            --text: #334155;
-            --white: #ffffff;
+
+:root {
+    --primary: #3b82f6;
+    --secondary: #0f172a;
+    --accent: #f97316;
+    --bg: #020617;
+    --card: rgba(15, 23, 42, 0.7);
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #f1f5f9;
+    --text-light: #94a3b8;
+    --glass: blur(16px);
+    --shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* On supprime [data-theme="light"] car il n'est plus nécessaire */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+        /* --- PRELOADER SYSTEM --- */
+        #loader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #020617; z-index: 10000; display: flex;
+            flex-direction: column; justify-content: center; align-items: center;
         }
-
-        html { scroll-behavior: smooth; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-        }
-
-        /* --- HEADER --- */
-        header {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            color: var(--white);
-            padding: 6rem 1rem;
-            text-align: center;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-        }
-
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
-
-        .profile-section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2.5rem;
-            flex-wrap: wrap;
-        }
-
-        .profile-img {
-            width: 200px;
-            height: 200px;
+        .loader-circle {
+            width: 60px; height: 60px;
+            border: 3px solid rgba(59, 130, 246, 0.1);
+            border-top: 3px solid var(--primary);
             border-radius: 50%;
-            border: 6px solid rgba(255,255,255,0.2);
-            object-fit: cover;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
+            animation: spin 1s linear infinite;
         }
-        
-        .profile-img:hover { transform: scale(1.05); }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .load-bar { width: 240px; height: 2px; background: rgba(255,255,255,0.05); margin-top: 25px; position: relative; border-radius: 10px; overflow: hidden; }
+        .load-progress { position: absolute; height: 100%; background: var(--primary); width: 0%; transition: 0.1s; box-shadow: 0 0 15px var(--primary); }
 
-        .info-card { text-align: left; max-width: 500px; }
-        .info-card h1 { font-size: 2.8rem; margin-bottom: 0.2rem; letter-spacing: -1px; }
-        .info-card .tagline { 
-            color: #bfdbfe; 
-            font-weight: 600; 
-            font-size: 1.3rem; 
-            margin-bottom: 1rem;
-            display: block;
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed; top: 25px; left: 50%; transform: translateX(-50%);
+            background: var(--card); backdrop-filter: var(--glass);
+            padding: 10px 30px; border-radius: 100px; border: 1px solid var(--border);
+            display: flex; gap: 20px; z-index: 999; box-shadow: var(--shadow);
         }
+        nav a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.85rem; opacity: 0.6; transition: 0.3s; padding: 8px 15px; border-radius: 50px; }
+        nav a:hover { opacity: 1; background: rgba(59, 130, 246, 0.1); color: var(--primary); }
 
-        /* --- SECTIONS --- */
-        main { margin-top: -50px; padding-bottom: 4rem; }
-
-        section {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-            margin-bottom: 2.5rem;
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 0 20px;
+            background: radial-gradient(circle at 50% -20%, rgba(59, 130, 246, 0.15), transparent);
         }
-
-        h2 {
-            color: var(--secondary);
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        .profile-img {
+            width: 140px; height: 140px; border-radius: 50%;
+            border: 4px solid var(--card); margin-bottom: 25px;
+            object-fit: cover; box-shadow: var(--shadow);
+            animation: float 6s ease-in-out infinite;
         }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-        h2::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: #e2e8f0;
+        .hero h1 { font-size: 4.5rem; font-weight: 800; letter-spacing: -3px; line-height: 1; margin-bottom: 15px; }
+        .hero h1 span { background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .badge-dev { background: var(--card); padding: 8px 20px; border-radius: 50px; border: 1px solid var(--border); font-size: 0.85rem; margin-bottom: 20px; font-weight: 600; }
+
+        /* --- BENTO GRID SYSTEM --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .bento-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
         }
-
-        /* --- SKILLS GRID --- */
-        .skills-group { margin-bottom: 2rem; }
-        .skills-group h3 { font-size: 1rem; text-transform: uppercase; color: #94a3b8; margin-bottom: 1rem; letter-spacing: 1px; }
-        
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
+        .bento-item {
+            background: var(--card); backdrop-filter: var(--glass);
+            border: 1px solid var(--border); border-radius: 32px; padding: 35px;
+            position: relative; overflow: hidden;
+            display: flex; flex-direction: column; justify-content: space-between;
         }
+        .bento-item h3 { font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .bento-item p { color: var(--text-light); font-size: 0.95rem; }
 
-        .skill-badge {
-            background: #f1f5f9;
-            color: var(--secondary);
-            padding: 10px 20px;
-            border-radius: 12px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            border: 1px solid #e2e8f0;
-            transition: 0.3s all ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .large { grid-column: span 2; }
+        .tall { grid-row: span 2; }
+
+        /* --- SKILLS & TAGS --- */
+        .skills-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+        .skill-tag {
+            padding: 6px 14px; background: rgba(59, 130, 246, 0.08);
+            color: var(--primary); border-radius: 12px; font-size: 0.8rem; font-weight: 700;
+            border: 1px solid rgba(59, 130, 246, 0.1);
         }
+        .skill-tag.orange { color: var(--accent); background: rgba(249, 115, 22, 0.08); border-color: rgba(249, 115, 22, 0.1); }
 
-        .skill-badge:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+        /* --- PROJECTS --- */
+        .project-card {
+            margin-top: 20px; flex-grow: 1;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 20px; position: relative; border: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center; overflow: hidden;
+        }
+        .project-card::before {
+            content: "UUID SECURED"; position: absolute; top: 10px; right: 10px;
+            font-size: 0.6rem; font-weight: 800; padding: 4px 8px; background: var(--accent); color: white; border-radius: 5px;
         }
 
-        .skill-badge.highlight {
-            border: 1px solid var(--primary);
-            color: var(--primary);
+        /* --- FOOTER & CONTACT --- */
+        .btn-main {
+            padding: 14px 25px; background: var(--primary); border: none; border-radius: 16px;
+            color: white; font-weight: 700; cursor: pointer; transition: 0.3s; text-decoration: none; text-align: center;
+        }
+        .btn-main:hover { transform: scale(1.02); box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); }
+
+        .theme-switch {
+            position: fixed; bottom: 30px; left: 30px; z-index: 1000; cursor: pointer;
+            background: var(--card); width: 50px; height: 50px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; border: 1px solid var(--border);
+            box-shadow: var(--shadow); font-size: 1.2rem;
         }
 
-        /* --- FOOTER --- */
-        footer {
-            background: var(--secondary);
-            color: var(--white);
-            text-align: center;
-            padding: 5rem 1rem;
-        }
-
-        .contact-links { margin: 2rem 0; }
-        .contact-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: 500;
-            padding: 10px 20px;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .contact-links a:hover { background: white; color: var(--secondary); }
-
-        .btn-cv {
-            display: inline-block;
-            background: var(--accent);
-            color: white !important;
-            padding: 15px 35px;
-            border-radius: 12px;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
-            transition: 0.3s;
-        }
-
-        .btn-cv:hover { transform: translateY(-3px); filter: brightness(1.1); }
-
-        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
+        /* --- ANIMATIONS --- */
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        @media (max-width: 768px) {
-            .profile-section { flex-direction: column; text-align: center; }
-            .info-card { text-align: center; }
-            header { clip-path: none; padding: 4rem 1rem; }
+        @media (max-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero h1 { font-size: 3rem; }
+        }
+        @media (max-width: 600px) {
+            .bento-grid { grid-template-columns: 1fr; }
+            .large, .tall { grid-column: span 1; grid-row: span 1; }
+            nav { width: 90%; justify-content: center; gap: 5px; padding: 10px; }
+            nav a { font-size: 0.7rem; padding: 8px 10px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <div class="profile-section">
-                <img src="img/photo1.jpg" alt="Arsene Roland GUIRE" class="profile-img">
-                <div class="info-card">
-                    <h1>Arsene Roland GUIRE</h1>
-                    <span class="tagline">Software Engineer & ERP Manager</span>
-                    <p>📍 Abidjan, Côte d'Ivoire</p>
-                    <p>🎓 Licence 3 Mathématiques-Informatique (UNA)</p>
-                </div>
-            </div>
+    <div id="loader">
+        <div class="loader-circle"></div>
+        <div class="load-bar"><div class="load-progress" id="lp"></div></div>
+        <p id="pc" style="color: var(--primary); margin-top: 15px; font-weight: 800; font-family: 'Outfit';">0%</p>
+    </div>
+
+    <nav>
+        <a href="#home">Accueil</a>
+        <a href="#about">Expertise</a>
+        <a href="#work">Projets</a>
+        <a href="mailto:guireroland623@gmail.com">Contact</a>
+    </nav>
+    
+    <section class="hero" id="home">
+        <div class="reveal">
+            <img src="img/photo1.jpg" alt="Arsène Roland GUIRE" class="profile-img">
+            <div class="badge-dev">Futur Software Engineer & ERP Architect</div>
+            <h1>Arsène Roland<br><span>GUIRE</span></h1>
+            <p style="font-size: 1.1rem; max-width: 650px; color: var(--text-light); margin-top: 10px;">
+                Expert en écosystème <strong>Python/Django</strong>. Je conçois des architectures Micro-SaaS haute performance sécurisées par <strong>UUID v7</strong>.
+            </p>
+            <p style="margin-top: 20px; font-weight: 600; font-size: 0.9rem;">📍 Abidjan, Côte d'Ivoire</p>
         </div>
-    </header>
+    </section>
 
-    <main class="container">
-        <section class="reveal">
-            <h2>À propos</h2>
-            <p>
-                Expert en conception de solutions logicielles rigoureuses, je transforme des problématiques complexes en outils performants. Mon background académique à l'<strong>Université Nangui Abrogoua</strong> m'apporte une solide base algorithmique que j'applique au développement de systèmes <strong>SaaS</strong> sécurisés.
-            </p>
-            <p style="margin-top: 1rem;">
-                Créateur du projet <strong>MonGérant</strong>, je me spécialise dans l'optimisation des bases de données et la sécurisation des échanges. Passionné par la transmission du savoir, je partage mes découvertes technologiques sur ma chaîne YouTube.
-            </p>
-        </section>
+    <div class="container">
+        <div class="bento-grid">
 
-        <section class="reveal">
-            <h2>Expertises Techniques</h2>
-            
-            <div class="skills-group">
-                <h3>Développement Backend & Logiciel</h3>
-                <div class="skills-container">
-                    <span class="skill-badge highlight">🐍 Python / Django</span>
-                    <span class="skill-badge">🏗️ Architecture SaaS / ERP</span>
-                    <span class="skill-badge">⚙️ Modélisation (Merise/UML)</span>
-                    <span class="skill-badge">🛡️ Chiffrement (César/Logique)</span>
+            <div class="bento-item large reveal" id="about">
+                <div>
+                    <h3> À propos</h3>
+                    <p>Passionné par l'architecture des systèmes et le monde du Génie Logiciel, je transforme des défis métier complexes en solutions numériques. Mon approche combine la rigueur des <strong>Mathématiques-Informatique</strong> et la puissance du développement Fullstack.</p>
+                </div>
+                <div class="skills-wrap">
+                    <span class="skill-tag">Algorithmie</span>
+                    <span class="skill-tag">Modélisation UML</span>
+                    <span class="skill-tag">Modélisation MERISE</span>
+                    <span class="skill-tag">Optimisation Sans Dérivé</span>
+                    <span class="skill-tag">Data Mining</span>
                 </div>
             </div>
 
-            <div class="skills-group">
-                <h3>Gestion de Données & Infra</h3>
-                <div class="skills-container">
-                    <span class="skill-badge highlight">🆔 Base de données (UUID v4/v7)</span>
-                    <span class="skill-badge">📊 SQL & Optimisation d'Index</span>
-                    <span class="skill-badge">🐧 Linux / Bash</span>
-                    <span class="skill-badge">☁️ Déploiement Cloud</span>
+            <div class="bento-item tall reveal">
+                <div>
+                    <h3>🛠️ Technical Stack</h3>
+                    <p style="font-size: 0.85rem; margin-bottom: 15px;">Mon arsenal technologique pour bâtir le futur.</p>
+                    <div class="skills-wrap">
+                        <p style="width: 100%; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 10px;">Backend</p>
+                        <span class="skill-tag">Python / Django</span>
+                        <span class="skill-tag orange">UUID v4/v7 Architecture</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Fast Api</span>
+                        <span class="skill-tag">RESTful APIs</span>
+
+                        <p style="width: 100%; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 15px;">Frontend & Tools</p>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML5 / CSS3 </span>
+                        <span class="skill-tag">Linux (Basics) & Bash Scripting</span>
+                        <span class="skill-tag">DevOps(Basics)</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="skills-group">
-                <h3>Frontend & UI</h3>
-                <div class="skills-container">
-                    <span class="skill-badge">🎨 HTML5 / CSS3 Modern</span>
-                    <span class="skill-badge">📱 Responsive Design</span>
-                    <span class="skill-badge">⚡ JavaScript (ES6+)</span>
+            <div class="bento-item large reveal" id="work">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <div>
+                        <h3> Projet Signature</h3>
+                        <p><strong>MonGérant (SaaS ERP)</strong> : Un système de gestion commerciale complet sécurisé par identifiants uniques UUID V7,pour les TPE/PME en CI.</p>
+                    </div>
+                    <span class="skill-tag orange">LIVE PROJECT</span>
+                </div>
+                <div class="project-card">
+                    <span style="color: var(--text-light); opacity: 0.3; font-weight: 800; font-size: 2rem;">SaaS(Software as a Service)-MonGérant</span>
                 </div>
             </div>
 
-            <div class="skills-group">
-                <h3>Mathématiques Appliquées</h3>
-                <div class="skills-container">
-                    <span class="skill-badge">📉 Traitement de Signal (Heaviside)</span>
-                    <span class="skill-badge">🧬 Algorithmique Avancée</span>
-                    <span class="skill-badge">🤖 IA & Data Science Basics</span>
+            <div class="bento-item reveal">
+                <h3>🎓 Formation</h3>
+                <p><strong>Licence 3</strong><br>Mathématiques-Informatique<br>Université Nangui Abrogoua (UNA)</p> 
+                <p><strong>Pratique 4.0</strong><br>Ordinateur+WIFI+Internet+Gemini(AI)<br>Pas de lieu fixe</p>
+
+                
+            </div>
+
+            <div class="bento-item large reveal">
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; width: 100%;">
+                    <div style="flex: 1; min-width: 200px;">
+                        <h3>🤝 Travaillons ensemble</h3>
+                        <p>Disponible pour des projets ambitieux ou des opportunités en ingénierie logicielle.</p>
+                        <p>Pour des offres de stage.</p>
+
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <a href="mailto:guireroland623@gmail.com" class="btn-main">Mon mail</a>
+                        <a href="CV_Arsene_Roland_GUIRE.pdf" class="btn-main" style="background: var(--card); border: 1px solid var(--border); color: var(--text);">Mon Cv</a>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <section class="reveal">
-            <h2>Projet Signature</h2>
-            <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border-left: 5px solid var(--primary);">
-                <h3 style="color: var(--primary);">MonGérant (SaaS ERP)</h3>
-                <p style="margin-top: 5px; font-style: italic;">Système de gestion commerciale sécurisé.</p>
-                <ul style="margin: 15px 0 0 20px;">
-                    <li>Utilisation systématique des <strong>UUID</strong> pour la sécurité des tables.</li>
-                    <li>Backend robuste sous <strong>Django</strong> avec gestion de stock en temps réel.</li>
-                    <li>Architecture pensée pour la scalabilité des PME ivoiriennes.</li>
-                </ul>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <h2 style="color: white; justify-content: center; margin-bottom: 2rem;">Travaillons ensemble</h2>
-            <p>Disponible pour des opportunités en Ingénierie Logicielle et Management de SI.</p>
-            
-            <div class="contact-links">
-                <a href="mailto:guireroland623@gmail.com">📧 Email</a>
-                <a href="https://github.com/ton-pseudo" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
-                <a href="https://www.youtube.com/@ton-canal" target="_blank">🎥 YouTube</a>
-            </div>
-
-            <a href="CV_Arsene_Roland_GUIRE.pdf" class="btn-cv">Télécharger mon CV complet</a>
-            
-            <p style="margin-top: 4rem; opacity: 0.5; font-size: 0.8rem;">
-                &copy; 2026 Arsene Roland GUIRE | Développé avec rigueur et passion.
-            </p>
         </div>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; color: var(--text-light); font-size: 0.8rem; border-top: 1px solid var(--border);">
+        <p>© 2026 Arsène Roland GUIRE. Fait avec passion et précision.</p>
     </footer>
+ <script>
+    // --- GESTION DU CHARGEMENT ---
+    let progress = 0;
+    const lp = document.getElementById('lp');
+    const pc = document.getElementById('pc');
+    const loader = document.getElementById('loader');
 
-    <script>
-        const revealElements = document.querySelectorAll(".reveal");
-        const scrollReveal = () => {
-            revealElements.forEach(el => {
-                const elementTop = el.getBoundingClientRect().top;
-                if (elementTop < window.innerHeight - 100) {
-                    el.classList.add("active");
-                }
-            });
-        };
-        window.addEventListener("scroll", scrollReveal);
-        scrollReveal(); 
-    </script>
+    const interval = setInterval(() => {
+        progress += Math.floor(Math.random() * 8) + 1;
+        if (progress > 100) progress = 100;
+        lp.style.width = progress + "%";
+        pc.innerText = progress + "%";
+
+        if (progress === 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    document.body.style.overflow = "auto";
+                    scrollReveal();
+                }, 500);
+            }, 400);
+        }
+    }, 40);
+
+    // --- ANIMATIONS REVEAL ---
+    const revealElements = document.querySelectorAll(".reveal");
+    const scrollReveal = () => {
+        revealElements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < window.innerHeight - 80) {
+                el.classList.add("active");
+            }
+        });
+    };
+    window.addEventListener("scroll", scrollReveal);
+
+     </script>
 </body>
 </html>
