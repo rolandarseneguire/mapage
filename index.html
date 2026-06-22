@@ -23,13 +23,13 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
             background: var(--bg);
             color: var(--text);
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
-            background-image: 
+            background-image:
                 radial-gradient(circle at 50% 0%, rgba(0, 113, 197, 0.1), transparent),
                 linear-gradient(rgba(0, 113, 197, 0.02) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 113, 197, 0.02) 1px, transparent 1px);
@@ -41,6 +41,7 @@
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: #020617; z-index: 10000; display: flex;
             flex-direction: column; justify-content: center; align-items: center;
+            transition: opacity 0.4s ease;
         }
         .loader-circle {
             width: 60px; height: 60px;
@@ -119,7 +120,7 @@
     <nav>
         <a href="#home">Home</a>
         <a href="#expertise">Expertise</a>
-        <a href="#projects">Projets</a>
+        <a href="#projects-anchor">Projets</a>
         <a href="mailto:guireroland623@gmail.com">Contact</a>
     </nav>
 
@@ -127,7 +128,7 @@
         <div class="reveal">
             <img src="img/Profil.jpeg" alt="Arsène Roland GUIRE" class="profile-img">
             <div class="badge-dev">
-                <i class="fas fa-microchip"></i> Étudiant en Licence 3 Informatique | Aspirant Administrateur de Bases de Données(Oracle, SQL).
+                <i class="fas fa-microchip"></i> Étudiant en Licence 3 Informatique | Aspirant Administrateur de Bases de Données (Oracle, SQL).
             </div>
             <h1>Arsène Roland<br><span>GUIRE</span></h1>
             <p style="margin-top: 25px; font-weight: 600;"><i class="fas fa-map-marker-alt" style="color: var(--accent);"></i> Abidjan, Côte d'Ivoire</p>
@@ -136,7 +137,7 @@
 
     <div class="container" id="expertise">
         <div class="bento-grid">
-            
+
             <div class="bento-item large reveal">
                 <div>
                     <h3><i class="fas fa-drafting-compass"></i> Ingénierie de Conception Logicielle </h3>
@@ -145,22 +146,22 @@
                 <div class="skills-wrap">
                     <span class="skill-tag">Modélisation UML</span>
                     <span class="skill-tag">Génie Logiciel</span>
-                    <span class="skill-tag">Programmation Orientée Objet (POO) </span>
+                    <span class="skill-tag">Programmation Orientée Objet (POO)</span>
                 </div>
             </div>
 
             <div class="bento-item tall reveal">
                 <div>
                     <h3><i class="fab fa-linux"></i> Système et Réseaux informatique</h3>
-                    <p>Gestion d'environnements Client-Serveur sous Red Hat Entreprise Linux (RHEL).Architecture Réseaux Ethernet</p>
+                    <p>Gestion d'environnements Client-Serveur sous Red Hat Enterprise Linux (RHEL). Architecture Réseaux Ethernet.</p>
                     <div class="skills-wrap">
                         <span class="skill-tag">VMware</span>
-                        <span class="skill-tag">Red Hat Entreprise Linux(RHEL)</span>
+                        <span class="skill-tag">Red Hat Enterprise Linux (RHEL)</span>
                         <span class="skill-tag">Oracle Linux</span>
-                        <span class="skill-tag">Bases Réseaux Informatique</span>
+                        <span class="skill-tag">Bases Réseaux Informatiques</span>
                         <span class="skill-tag">Modèle OSI</span>
                         <span class="skill-tag">Modèle TCP/IP</span>
-                        <span class="skill-tag">Réseaux Domestique WLAN</span>
+                        <span class="skill-tag">Réseaux Domestiques WLAN</span>
                         <span class="skill-tag">Équipements et supports réseaux</span>
                         <span class="skill-tag">Service DHCP</span>
                         <span class="skill-tag">Service FTP</span>
@@ -187,9 +188,9 @@
 
             <div class="bento-item reveal">
                 <h3><i class="fas fa-database"></i>Système de gestion de base de données</h3>
-                <p>Fouille de données (Data Mining) sur bases SQL avancées pour l'extraction de connaissances. connaissance de l'architecture de la base d données Oracle</p>
+                <p>Fouille de données (Data Mining) sur bases SQL avancées pour l'extraction de connaissances. Connaissance approfondie de l'architecture de la base de données Oracle.</p>
                 <div class="skills-wrap">
-                    <span class="skill-tag">SQL</span> 
+                    <span class="skill-tag">SQL</span>
                     <span class="skill-tag">MySQL</span>
                     <span class="skill-tag">MongoDB</span>
                     <span class="skill-tag">Architecture Oracle Databases</span>
@@ -208,27 +209,33 @@
             </div>
 
             <div class="bento-item reveal">
-                <h3><i class="fas fa-mobile-alt"></i>Outils IA Générative utilisé</h3>
+                <h3><i class="fas fa-robot"></i> Intégration de l'IA</h3>
+                <p>Utilisation avancée des outils d'IA générative pour l'optimisation des flux de développement et le prompt engineering.</p>
                 <div class="skills-wrap">
-                    <span class="skill-tag">Gemini(Google IA)</span>
-                    <span class="skill-tag">Claude(Anthropic IA)</span>
+                    <span class="skill-tag">Gemini (Google AI)</span>
+                    <span class="skill-tag">Claude (Anthropic AI)</span>
                 </div>
             </div>
 
-            <div class="bento-item large reveal" id="projects" style="border: 2px solid var(--primary);">
+            <!-- ANCRE GLOBALE POUR LES PROJETS -->
+            <div id="projects-anchor" style="scroll-margin-top: 100px;"></div>
+
+            <div class="bento-item large reveal" style="border: 2px solid var(--primary);">
                 <div style="display: flex; justify-content: space-between; align-items: start;">
                     <div>
                         <h3 style="color: #fff;"><i class="fas fa-factory"></i> SurveyFactory</h3>
                         <p>Logiciel industriel complet de gestion de sondages. Architecture Micro-SaaS avec versionnage atomique et traçabilité par <strong>UUID v7</strong>.</p>
                     </div>
-                    <span class="skill-tag orange">PROJECT FLAGSHIP EN WEB</span>
+                    <span class="skill-tag orange">PROJET FLAGSHIP WEB</span>
                 </div>
                 <div class="project-card-mini" style="background: linear-gradient(90deg, #001e3c, #000);">
-                    <span style="font-family: monospace; color: var(--primary-light); font-size: 0.8rem;">EN PRODUCTION</span>
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <a href="https://roland.pythonanywhere.com/" class="btn-main">CLIQUEZ POUR VOIR L'APPLICATION</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="bento-item large reveal" id="projects" style="border: 2px solid var(--primary);">
+            <div class="bento-item large reveal" style="border: 2px solid var(--primary);">
                 <div style="display: flex; justify-content: space-between; align-items: start;">
                     <div>
                         <h3 style="color: #fff;"><i class="fas fa-network-wired"></i> Architecture Client-Serveur sous RHEL</h3>
@@ -236,76 +243,93 @@
                         <div class="skills-wrap" style="margin-top: 10px;">
                             <span class="skill-tag">Service DHCP</span>
                             <span class="skill-tag">Service FTP</span>
-                        </div> 
+                        </div>
                     </div>
-                    <span class="skill-tag orange">PROJECT FLAGSHIP IN LINUX </span> 
-                </div> 
-                
+                    <span class="skill-tag orange">PROJET FLAGSHIP LINUX</span>
+                </div>
                 <div class="project-card-mini" style="background: linear-gradient(90deg, #001e3c, #000);">
-                    <span style="font-family: monospace; color: var(--primary-light); font-size: 0.8rem;">[root@systemfactory ~]# systemctl start dhcpd vsftpd</span>
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <a href="https://rolandarseneguire.github.io/travauxadministrationlinux/" class="btn-main">VOIR MON RAPPORT DE CONFIGURATION</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="bento-item large reveal" id="projects" style="border: 2px solid var(--primary);">
+            <div class="bento-item large reveal" style="border: 2px solid var(--primary);">
                 <div style="display: flex; justify-content: space-between; align-items: start;">
                     <div>
-                        <h3 style="color: #fff;"><i class="fas fa-network-wired"></i> SCRIPTS BASH D'AUTOMATISATION DE TRANSFERTS FTP SOUS RHEL</h3>
-                        <p>Objectif du projet : concevoir un script Bash capable de simplifier et fiabiliser les transferts de fichiers pour plusieurs utilisateurs, en automatisant la récupération des données depuis un serveur FTP et en les déposant dans un répertoire local défini. Ce projet illustre l’importance de l’automatisation dans l’administration système et met en évidence les avantages d’une gestion centralisée et reproductible des processus.</p>
-                        <div class="skills-wrap" style="margin-top: 10px;"></div> 
+                        <h3 style="color: #fff;"><i class="fas fa-code"></i> Scripts Bash d'automatisation FTP sous RHEL</h3>
+                        <p>Conception d'un script Bash d'automatisation des flux pour sécuriser et fiabiliser les transferts de fichiers multi-utilisateurs. Gestion centralisée et reproductible des processus d'administration système.</p>
                     </div>
-                    <span class="skill-tag orange">PROJECT FLAGSHIP IN LINUX </span> 
-                </div> 
-                
+                    <span class="skill-tag orange">PROJET FLAGSHIP LINUX</span>
+                </div>
                 <div class="project-card-mini" style="background: linear-gradient(90deg, #001e3c, #000);">
-                    <span style="font-family: monospace; color: var(--primary-light); font-size: 0.8rem;">[root@systemfactory ~]# bash systemfactory.sh</span>
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <a href="https://rolandarseneguire.github.io/travauxadministrationlinux/" class="btn-main">VOIR MON RAPPORT DE CONFIGURATION</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="bento-item large reveal" id="projects" style="border: 2px solid var(--primary);">
+            <div class="bento-item large reveal" style="border: 2px solid var(--primary);">
                 <div style="display: flex; justify-content: space-between; align-items: start;">
                     <div>
-                        <h3 style="color: #fff;"><i class="fas fa-network-wired"></i> MODELISATION D'UN LOGICIEL DE  E-LEARNING AVEC UML</h3>
-                        <p>1.Diagramme de cas d'utilisation<br><br>2.Diagramme de classe<br><br>3.Diagramme de séquence<br><br>4.Diagramme d'activité</p>
-                        <div class="skills-wrap" style="margin-top: 10px;"></div> 
-                    </div>
-                    <span class="skill-tag orange">PROJECT FLAGSHIP EN GENIE LOGICIEL </span> 
-                </div> 
-                
-                <div class="project-card-mini" style="background: linear-gradient(90deg, #001e3c, #000);">
-                    <span style="font-family: monospace; color: var(--primary-light); font-size: 0.8rem;">LE GENIE LOGICIEL EST PLUS QUE DU CODE</span>
-                </div>
-            </div>
-
-            <div class="bento-item large reveal" id="projects" style="border: 2px solid var(--primary);">
-                <div style="display: flex; justify-content: space-between; align-items: start;">
-                    <div>
-                        <h3 style="color: #fff;"><i class="fas fa-wifi"></i> INTERCONNEXION ET CASCADING DE ROUTEURS DOMESTIQUES (WLAN)</h3>
-                        <p>Objectif du projet : Configurer et interconnecter deux routeurs domestiques pour étendre la capacité du commutateur local (passant de 4 à 6 ports Ethernet disponibles) et déployer un mode répéteur sans fil pour maximiser la portée du signal Wi-Fi. Ce projet a nécessité un audit complet de la couche 2 (passerelle transparente), la désactivation des conflits DHCP et la validation du routage mono-saut (1 hop).</p>
+                        <h3 style="color: #fff;"><i class="fas fa-project-diagram"></i> Modélisation d'un logiciel de E-Learning (UML)</h3>
+                        <p>Conception d'architecture via diagrammes de cas d'utilisation, de classes, de séquences et d'activités pour structurer une solution d'apprentissage en ligne moderne.</p>
                         <div class="skills-wrap" style="margin-top: 10px;">
-                            <span class="skill-tag" style="background: rgba(0, 122, 255, 0.1); color: #007aff; border: 1px solid rgba(0, 122, 255, 0.2); padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 5px;">Cascading de Routeurs</span>
-                            <span class="skill-tag" style="background: rgba(0, 122, 255, 0.1); color: #007aff; border: 1px solid rgba(0, 122, 255, 0.2); padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 5px;">Répéteur Wi-Fi & WLAN</span>
-                            <span class="skill-tag" style="background: rgba(0, 122, 255, 0.1); color: #007aff; border: 1px solid rgba(0, 122, 255, 0.2); padding: 2px 8px; border-radius: 4px; font-size: 0.8rem;">Extension Commutateur (Switch)</span>
-                        </div> 
+                            <span class="skill-tag">Diagramme de Use Cases</span>
+                            <span class="skill-tag">Diagramme de Classes</span>
+                            <span class="skill-tag">Diagramme de Séquences</span>
+                            <span class="skill-tag">Diagramme d'Activités</span>
+                        </div>
                     </div>
-                    <span class="skill-tag orange">PROJECT FLAGSHIP IN NETWORKING Cisco </span>  
-                </div> 
-                
+                    <span class="skill-tag orange">PROJET FLAGSHIP GÉNIE LOGICIEL</span>
+                </div>
+                <div class="project-card-mini" style="background: linear-gradient(90deg, #001e3c, #000);">
+                    <span style="font-family: monospace; color: var(--primary-light); font-size: 0.8rem;">PROJET EN LOCAL SUR POSTE DE DÉVELOPPEMENT</span>
+                </div>
+            </div>
+
+            <div class="bento-item large reveal" style="border: 2px solid var(--primary);">
+                <div style="display: flex; justify-content: space-between; align-items: start;">
+                    <div>
+                        <h3 style="color: #fff;"><i class="fas fa-wifi"></i> Interconnexion de routeurs domestiques (WLAN)</h3>
+                        <p>Configuration d'une infrastructure réseau pour étendre la capacité locale de commutation et déploiement d'un mode répéteur sans fil. Audit complet de la couche 2, isolation des conflits DHCP et routage mono-saut.</p>
+                        <div class="skills-wrap" style="margin-top: 10px;">
+                            <span class="skill-tag">Cascading de Routeurs</span>
+                            <span class="skill-tag">Répéteur Wi-Fi & WLAN</span>
+                            <span class="skill-tag">Extension de Commutateur (Switch)</span>
+                        </div>
+                    </div>
+                    <span class="skill-tag orange">PROJET FLAGSHIP RÉSEAU</span>
+                </div>
                 <div class="project-card-mini" style="background: linear-gradient(90deg, #001e3c, #000); margin-top: 15px; padding: 10px; border-radius: 4px;">
-                    <span style="font-family: monospace; color: var(--primary-light); font-size: 0.8rem; display: block;">C:\Users\Anonymos; tracert 192.168.1.250</span>
-                    <span style="font-family: monospace; color: #a5b4fc; font-size: 0.8rem; display: block; margin-top: 2px;">1    &lt;1 ms    &lt;1 ms    &lt;1 ms  192.168.1.250 [Route transparente locale - 1 seul saut]</span>
+                    <span style="font-family: monospace; color: var(--primary-light); font-size: 0.8rem; display: block;">MAQUETTE D'INFRASTRUCTURE LAN / WLAN (ENVIRONNEMENT DE TEST PHYSIQUE)</span>
                 </div>
             </div>
 
             <div class="bento-item reveal">
                 <h3><i class="fas fa-graduation-cap"></i> Formation Académique</h3>
-                <p><strong>Licence 3 Informatique (En cours...)</strong><br>Mathématiques-Informatique<br>Univ. Nangui Abrogoua (UNA)</p>
+                <p><strong>Licence 3 Informatique (En cours)</strong><br>Parcours Mathématiques-Informatique<br>Univ. Nangui Abrogoua (UNA)</p>
+            </div>
+
+            <div class="bento-item reveal">
+                <h3><i class="fas fa-certificate"></i> Certifications IT</h3>
+                <div class="skills-wrap" style="margin-top: 10px;">
+                    <span class="skill-tag">Bases du Matériel Informatique</span>
+                    <span class="skill-tag">Notions fondamentales sur les réseaux</span>
+                    <span class="skill-tag">Introduction à la cybersécurité</span>
+                </div>
+                <div class="project-card-mini" style="background: linear-gradient(90deg, #001e3c, #000);">
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <a href="https://rolandarseneguire.github.io/certificate/" class="btn-main">VOIR MES CERTIFICATS</a>
+                    </div>
+                </div>
             </div>
 
             <div class="bento-item large reveal">
                 <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 20px;">
                     <div>
                         <h3><i class="fas fa-handshake"></i> Travaillons ensemble</h3>
-                        <p>Disponible pour des opportunités d'<strong>emploi</strong> ou de <strong>stage</strong> en technologie de l'information.</p>
+                        <p>Disponible pour des opportunités d'<strong>emploi</strong> ou de <strong>stage</strong> en technologies de l'information.</p>
                     </div>
                     <div style="display: flex; gap: 10px;">
                         <a href="mailto:guireroland623@gmail.com" class="btn-main">ME CONTACTER</a>
@@ -313,31 +337,25 @@
                     </div>
                 </div>
             </div>
-            
-        </div>
-        
-        <br><br>
-        
-        <div style="display: flex; gap: 10px; justify-content: center;">
-            <a href="https://rolandarseneguire.github.io/travauxadministrationlinux/" class="btn-main">VOIR MES TRAVAUX EN ADMINISTRATION SYSTEME LINUX(RHEL)</a>
+
         </div>
     </div>
 
     <footer style="text-align: center; padding: 60px; color: var(--text-light); font-size: 0.85rem; border-top: 1px solid var(--border);">
-        <p>© 2026 SystemFactory, Arsène Roland GUIRE, tous droits réservés</p>
+        <p>© 2026 SystemFactory, Arsène Roland GUIRE. Tous droits réservés.</p>
     </footer>
 
     <script>
-        // LOADER SYSTEM
+        // SYSTEME LOADER (Temps ajusté de manière fluide pour l'UX)
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             setTimeout(() => {
                 loader.style.opacity = '0';
-                setTimeout(() => { loader.style.display = 'none'; }, 500);
-            }, 1000);
+                setTimeout(() => { loader.style.display = 'none'; }, 400);
+            }, 400);
         });
 
-        // REVEAL ANIMATION
+        // ANIMATION REVEAL
         const reveal = () => {
             const reveals = document.querySelectorAll('.reveal');
             reveals.forEach(el => {
