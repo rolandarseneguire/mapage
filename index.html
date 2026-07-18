@@ -92,7 +92,7 @@
             border: 3px solid var(--primary); margin-bottom: 25px;
             object-fit: cover; box-shadow: 0 0 30px rgba(0, 113, 197, 0.3);
         }
-        .badge-dev { background: var(--card); padding: 8px 20px; border-radius: 2px; border: 1px solid var(--border); font-size: 0.85rem; margin-bottom: 20px; font-weight: 600; color: var(--primary-light); }
+        .badge-dev { background: var(--card); padding: 8px 20px; border-radius: 2px; border: 1px solid var(--border); font-size: 0.85rem; margin-bottom: 20px; font-weight: 600; color: var(--primary-light); line-height: 1.4; }
         .hero h1 { font-size: 2.9rem; font-weight: 100; letter-spacing: -2px; line-height: 1; margin-bottom: 20px; }
         .hero h1 span { background: linear-gradient(90deg, var(--primary-light), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
@@ -135,7 +135,7 @@
 
     <div id="loader">
         <div class="loader-circle"></div>
-        <p id="loader-text" style="color: var(--primary-light); margin-top: 15px; font-weight: 700; letter-spacing: 2px;" data-fr="Bienvenue sur mon profil..." data-en="Welcome to my profile..."></p>
+        <p id="loader-text" style="color: var(--primary-light); margin-top: 15px; font-weight: 700; letter-spacing: 2px;" data-fr="Bienvenue sur mon profil..." data-en="Welcome to my profile...">Bienvenue sur mon profil...</p>
     </div>
 
     <nav>
@@ -149,11 +149,13 @@
     <section class="hero" id="home">
         <div class="reveal">
             <img src="img/Profil.jpeg" alt="Arsène Roland GUIRE" class="profile-img">
-            <div class="badge-dev" data-fr="<i class='fas fa-microchip'></i> Étudiant en Licence 3 Informatique | Aspirant Administrateur de Bases de Données (Oracle, SQL)." data-en="<i class='fas fa-microchip'></i> Computer Science Student (3rd Year) | Aspiring Oracle Database Administrator (Oracle, SQL).">
-                <i class="fas fa-microchip"></i> Étudiant en Sciences Informatique | Aspirant Administrateur de Bases de Données (Oracle,SQL).
+            <div class="badge-dev"
+                 data-fr="<i class='fas fa-microchip'></i> Étudiant en Sciences Informatiques | Aspirant Spécialiste IT"
+                 data-en="<i class='fas fa-microchip'></i> Computer Science Student | Aspiring IT Specialist">
+                <i class="fas fa-microchip"></i> Étudiant en Sciences Informatiques | Aspirant Spécialiste IT
             </div>
             <h1>Arsène Roland<br><span>GUIRE</span></h1>
-            <p style="margin-top: 25px; font-weight: 600;" data-fr="<i class='fas fa-map-marker-alt' style='color: var(--accent);'></i> Abidjan, Côte d'Ivoire" data-en="<i class='fas fa-map-marker-alt' style='color: var(--accent);'></i> Abidjan, Ivory Coast"></p>
+            <p style="margin-top: 25px; font-weight: 600;" data-fr="<i class='fas fa-map-marker-alt' style='color: var(--accent);'></i> Abidjan, Côte d'Ivoire" data-en="<i class='fas fa-map-marker-alt' style='color: var(--accent);'></i> Abidjan, Ivory Coast"><i class='fas fa-map-marker-alt' style='color: var(--accent);'></i> Abidjan, Côte d'Ivoire</p>
         </div>
     </section>
 
@@ -176,7 +178,7 @@
             <!-- Systems & Networks -->
             <div class="bento-item tall reveal">
                 <div>
-                    <h3 data-fr="<i class='fab fa-linux'></i> Système et Réseaux informatique" data-en="<i class='fab fa-linux'></i> Systems and Networks"><i class="fab fa-linux"></i>Infrastructure Réseau et Système </h3>
+                    <h3 data-fr="<i class='fab fa-linux'></i> Infrastructure Réseau et Système" data-en="<i class='fab fa-linux'></i> Systems and Networks Infrastructure"><i class="fab fa-linux"></i>Infrastructure Réseau et Système </h3>
                     <p data-fr="Gestion d'environnements Client-Serveur sous Red Hat Enterprise Linux (RHEL). Architecture Réseaux Ethernet." data-en="Management of Client-Server environments running Red Hat Enterprise Linux (RHEL). Ethernet Network Architecture."></p>
                     <div class="skills-wrap">
                         <span class="skill-tag">VMware</span>
@@ -185,16 +187,21 @@
                         <span class="skill-tag">FortiOS</span>
                         <span class="skill-tag">FortiGate</span>
                         <span class="skill-tag">GNS3</span>
+                        <span class="skill-tag">Windows Server</span>
+                        <span class="skill-tag">Active Directory</span>
+                        <span class="skill-tag">Active Directory Domain Services</span>
+                        <span class="skill-tag" data-fr="Contrôleur de Domaine (AD-DS, DNS, DHCP)" data-en="Domain Controller (AD-DS, DNS, DHCP)">Contrôleur de Domaine (AD-DS, DNS, DHCP)</span>
+                        <span class="skill-tag">Windows 11 Enterprise</span>
                         <span class="skill-tag" data-fr="Bases Réseaux Informatiques" data-en="Networking Fundamentals">Bases Réseaux Informatiques</span>
                         <span class="skill-tag" data-fr="Modèle OSI" data-en="OSI Model">Modèle OSI</span>
                         <span class="skill-tag" data-fr="Modèle TCP/IP" data-en="TCP/IP Model">Modèle TCP/IP</span>
                         <span class="skill-tag" data-fr="Équipements et supports réseaux" data-en="Network Devices & Media">Équipements et supports réseaux</span>
                         <span class="skill-tag" data-fr="Service DHCP" data-en="DHCP Service">Service DHCP</span>
                         <span class="skill-tag" data-fr="Service FTP" data-en="FTP Service">Service FTP</span>
-                        <span class="skill-tag" data-fr="Routage" data-en="Routing">Routing</span>
-                        <span class="skill-tag" data-fr="Commutation" data-en="Switching">Switching</span>
-                        <span class="skill-tag" data-fr="Gestion Groupes/Users" data-en="Users & Groups Management">Gestion Groupes/Users</span>
-                        <span class="skill-tag" data-fr="Bash Scripting (automatisation des tâches)" data-en="Bash Scripting (Task Automation)">Bash Scripting (automatisation des tâches)</span>
+                        <span class="skill-tag" data-fr="Routage" data-en="Routing">Routage</span>
+                        <span class="skill-tag" data-fr="Commutation" data-en="Switching">Commutation</span>
+                        <span class="skill-tag" data-fr="Gestion Groupes/Utilisateurs" data-en="Users & Groups Management">Gestion Groupes/Utilisateurs</span>
+                        <span class="skill-tag" data-fr="Scripting Bash (automatisation)" data-en="Bash Scripting (Automation)">Scripting Bash (automatisation)</span>
                     </div>
                 </div>
                 <div class="project-card-mini">
@@ -214,14 +221,14 @@
 
             <!-- DBMS -->
             <div class="bento-item reveal">
-                <h3 data-fr="<i class='fas fa-database'></i> Système de gestion de base de données" data-en="<i class='fas fa-database'></i> Database Management Systems"><i class="fas fa-database"></i>Système de gestion de base de données (SGBD)</h3>
+                <h3 data-fr="<i class='fas fa-database'></i> Systèmes de Gestion de Bases de Données (SGBD)" data-en="<i class='fas fa-database'></i> Database Management Systems (DBMS)"><i class="fas fa-database"></i>Systèmes de Gestion de Bases de Données (SGBD)</h3>
                 <p data-fr="Fouille de données (Data Mining) sur bases SQL avancées pour l'extraction de connaissances. Connaissance approfondie de l'architecture de la base de données Oracle." data-en="Data Mining on advanced SQL databases for knowledge extraction. In-depth understanding of Oracle Database core architecture."></p>
                 <div class="skills-wrap">
                     <span class="skill-tag">SQL</span>
                     <span class="skill-tag">MySQL</span>
                     <span class="skill-tag">Oracle Database</span>
-                    <span class="skill-tag" data-fr="Architecture Oracle Databases" data-en="Oracle Database Architecture">Architecture Oracle Database</span>
-                    <span class="skill-tag" data-fr="Mining / Fouille" data-en="Data Mining">Mining / Fouille</span>
+                    <span class="skill-tag" data-fr="Architecture Oracle Database" data-en="Oracle Database Architecture">Architecture Oracle Database</span>
+                    <span class="skill-tag" data-fr="Data Mining / Fouille" data-en="Data Mining">Data Mining / Fouille</span>
                 </div>
             </div>
 
@@ -290,7 +297,7 @@
                 <div style="display: flex; justify-content: space-between; align-items: start;">
                     <div>
                         <h3 style="color: #fff;" data-fr="<i class='fas fa-code'></i> Scripts Bash d'automatisation FTP sous RHEL" data-en="<i class='fas fa-code'></i> Bash Scripting for FTP Automation on RHEL"><i class="fas fa-code"></i> Scripts Bash d'automatisation FTP sous RHEL</h3>
-                        <p data-fr="Conception d'un script Bash d'automatisation des flux pour sécuriser et fiabiliser les transferts de fichiers multi-utilisateurs. Gestion centralisée et reproductible des processus d'administration système." data-en="Design of an automation Bash script to secure and optimize multi-user file transfer workflows. Centralized and reproducible system administration processing."></p>
+                        <p data-fr="Conception d'un script Bash d'automatisation des flux pour sécuriser et fiabiliser les transferts de fichiers multi-utilisateurs. Gestion centralisée et reproductible des processus d'administration système." data-en="Design of an automation Bash script to secure and optimize multi-user file transfer workflows. Centralized and repeatable system administration processing."></p>
                     </div>
                     <span class="skill-tag orange" data-fr="PROJET FLAGSHIP LINUX" data-en="FLAGSHIP LINUX PROJECT">PROJET FLAGSHIP LINUX</span>
                 </div>
@@ -308,7 +315,7 @@
                         <h3 style="color: #fff;" data-fr="<i class='fas fa-project-diagram'></i> Modélisation d'un logiciel de E-Learning (UML)" data-en="<i class='fas fa-project-diagram'></i> E-Learning Software Modeling (UML)"><i class="fas fa-project-diagram"></i> Modélisation d'un logiciel de E-Learning (UML)</h3>
                         <p data-fr="Conception d'architecture via diagrammes de cas d'utilisation, de classes, de séquences et d'activités pour structurer une solution d'apprentissage en ligne moderne." data-en="Architectural software design via Use Case, Class, Sequence, and Activity diagrams to structure a modern online learning platform."></p>
                         <div class="skills-wrap" style="margin-top: 10px;">
-                            <span class="skill-tag" data-fr="Diagramme de Use Cases" data-en="Use Case Diagram">Diagramme de Use Cases</span>
+                            <span class="skill-tag" data-fr="Diagramme de Cas d'Utilisation" data-en="Use Case Diagram">Diagramme de Cas d'Utilisation</span>
                             <span class="skill-tag" data-fr="Diagramme de Classes" data-en="Class Diagram">Diagramme de Classes</span>
                             <span class="skill-tag" data-fr="Diagramme de Séquences" data-en="Sequence Diagram">Diagramme de Séquences</span>
                             <span class="skill-tag" data-fr="Diagramme d'Activités" data-en="Activity Diagram">Diagramme d'Activités</span>
@@ -339,10 +346,10 @@
                             <span class="skill-tag">Oracle Linux (mode CLI)</span>
                             <span class="skill-tag">GNS3 & VMware Workstation Pro</span>
                             <span class="skill-tag" data-fr="Sécurité Périmétrique & VIP" data-en="Perimeter Security & VIP">Sécurité Périmétrique & VIP</span>
-                            <span class="skill-tag" data-fr="Audit de Flux (Wireshark)" data-en="Traffic Auditing (Wireshark)">Audit de Flux (Wireshark GNS3)</span>
+                            <span class="skill-tag" data-fr="Audit de Flux (Wireshark GNS3)" data-en="Traffic Auditing (Wireshark GNS3)">Audit de Flux (Wireshark GNS3)</span>
                         </div>
                     </div>
-                    <span class="skill-tag orange" data-fr="PROJET FLAGSHIP RÉSEAU" data-en="FLAGSHIP NETWORKING PROJECT">PROJET FLAGSHIP INFRASTRUTURE D'ENTREPRISE</span>
+                    <span class="skill-tag orange" data-fr="PROJET FLAGSHIP RÉSEAU" data-en="FLAGSHIP NETWORKING PROJECT">PROJET FLAGSHIP RÉSEAU</span>
                 </div>
                 <div class="project-card-mini" style="background: linear-gradient(90deg, #001e3c, #000);">
                     <div style="display: flex; gap: 10px; justify-content: center;">
@@ -351,18 +358,61 @@
                 </div>
             </div>
 
+            <!-- Project 6: Enterprise Security (FortiGate & Windows Server 2022 - AD-DS) -->
+            <div class="bento-item large reveal" style="border: 2px solid var(--primary); background-color: #0b0f19; color: #fff;">
+                <div style="display: flex; justify-content: space-between; align-items: start; gap: 15px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 280px;">
+                        <h3 style="color: #fff;"
+                            data-fr="<i class='fas fa-shield-alt'></i> Architecture Réseau & Contrôleur de Domaine Sécurisé (FortiGate & WS2022)"
+                            data-en="<i class='fas fa-shield-alt'></i> Secure Network Architecture & Domain Controller (FortiGate & WS2022)">
+                            <i class="fas fa-shield-alt"></i> Architecture Réseau & Contrôleur de Domaine Sécurisé (FortiGate & WS2022)
+                        </h3>
+
+                        <p data-fr="Déploiement d'une infrastructure réseau d'entreprise basée sur Windows Server 2022 en mode Core (AD-DS, DNS, DHCP), orchestrée sous GNS3 et VMware. Sécurisation de bout en bout par un pare-feu FortiGate de nouvelle génération (NGFW) avec inspection SSL profonde, profils antivirus et politiques d'accès strictes."
+                           data-en="Deployment of an enterprise network infrastructure based on Windows Server 2022 in Core mode (AD-DS, DNS, DHCP), orchestrated under GNS3 and VMware. End-to-end security via a Next-Generation FortiGate Firewall (NGFW) featuring deep SSL inspection, antivirus profiles, and strict access policies."></p>
+
+                        <div class="skills-wrap" style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span class="skill-tag">Security by Design</span>
+                            <span class="skill-tag">Fortinet FortiGate NGFW</span>
+                            <span class="skill-tag">Windows Server 2022 Core (AD-DS)</span>
+                            <span class="skill-tag">GNS3 & VMware Workstation</span>
+                            <span class="skill-tag" data-fr="Inspection SSL & VIP" data-en="SSL Inspection & VIP">Inspection SSL & VIP</span>
+                            <span class="skill-tag" data-fr="Sécurité Périmétrique" data-en="Perimeter Security">Sécurité Périmétrique</span>
+                            <span class="skill-tag" data-fr="Audit de Flux (Threat Score)" data-en="Traffic Auditing (Threat Score)">Audit de Flux (Threat Score)</span>
+                        </div>
+                    </div>
+
+                    <span class="skill-tag orange" style="white-space: nowrap;"
+                          data-fr="PROJET FLAGSHIP INFRASTRUCTURE & SÉCURITÉ"
+                          data-en="FLAGSHIP INFRASTRUCTURE & SECURITY PROJECT">
+                          PROJET FLAGSHIP INFRASTRUCTURE & SÉCURITÉ
+                    </span>
+                </div>
+
+                <div class="project-card-mini" style="background: linear-gradient(90deg, #0f172a, #020617); margin-top: 20px; padding: 15px; border-radius: 8px;">
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <a href="https://rolandarseneguire.github.io/travauxadministrationlinux/"
+                           class="btn-main"
+                           data-fr="VOIR LE RAPPORT DE CONFIGURATION SÉCURISÉE"
+                           data-en="VIEW SECURE CONFIGURATION REPORT">
+                           VOIR LE RAPPORT DE CONFIGURATION SÉCURISÉE
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Education -->
             <div class="bento-item reveal">
                 <h3 data-fr="<i class='fas fa-graduation-cap'></i> Formation Académique" data-en="<i class='fas fa-graduation-cap'></i> Academic Education"><i class="fas fa-graduation-cap"></i> Formation Académique</h3>
-                <p data-fr="<strong>Licence 3 Informatique (En cours)</strong><br>Parcours Mathématiques-Informatique<br>Univ. Nangui Abrogoua (UNA)" data-en="<strong>Bachelor in Computer Science (Ongoing)</strong><br>Mathematics & Computer Science Curriculum<br>Nangui Abrogoua University (UNA)"></p>
+                <p data-fr="<strong>Licence 3 Informatique (En cours)</strong><br>Parcours Mathématiques-Informatique<br>Univ. Nangui Abrogoua (UNA)" data-en="<strong>Bachelor's Degree in Computer Science (Ongoing)</strong><br>Mathematics & Computer Science Curriculum<br>Nangui Abrogoua University (UNA)"></p>
             </div>
 
             <!-- IT Certs -->
             <div class="bento-item reveal">
                 <h3 data-fr="<i class='fas fa-certificate'></i> Certifications IT" data-en="<i class='fas fa-certificate'></i> IT Certifications"><i class="fas fa-certificate"></i> Certifications IT</h3>
                 <div class="skills-wrap" style="margin-top: 10px;">
-                    <span class="skill-tag" data-fr="Bases du Matériel Informatique" data-en="Hardware Basics">Bases du Matériel Informatique</span>
-                    <span class="skill-tag" data-fr="Notions fondamentales sur les réseaux" data-en="Networking Basics">Notions fondamentales sur les réseaux</span>
+                    <span class="skill-tag" data-fr="Bases du Matériel Informatique" data-en="Hardware Fundamentals">Bases du Matériel Informatique</span>
+                    <span class="skill-tag" data-fr="Notions fondamentales sur les réseaux" data-en="Networking Fundamentals">Notions fondamentales sur les réseaux</span>
                     <span class="skill-tag" data-fr="Introduction à la cybersécurité" data-en="Introduction to Cybersecurity">Introduction à la cybersécurité</span>
                 </div>
                 <div class="project-card-mini" style="background: linear-gradient(90deg, #001e3c, #000);">
