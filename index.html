@@ -179,33 +179,35 @@
             <div class="bento-item tall reveal">
                 <div>
                     <h3 data-fr="<i class='fab fa-linux'></i> Infrastructure Réseau et Système" data-en="<i class='fab fa-linux'></i> Systems and Networks Infrastructure"><i class="fab fa-linux"></i>Infrastructure Réseau et Système </h3>
-                    <p data-fr="Gestion d'environnements Client-Serveur sous Red Hat Enterprise Linux (RHEL). Architecture Réseaux Ethernet." data-en="Management of Client-Server environments running Red Hat Enterprise Linux (RHEL). Ethernet Network Architecture."></p>
+                    <p data-fr="Gestion d'environnements Client-Serveur sous Red Hat Enterprise Linux (RHEL) et Windows Server. Architecture Réseaux, administration distante et durcissement d'infrastructure (Security by Design)." data-en="Management of Client-Server environments running Red Hat Enterprise Linux (RHEL) and Windows Server. Network architecture, secure remote administration and infrastructure hardening (Security by Design)."></p>
                     <div class="skills-wrap">
                         <span class="skill-tag">VMware</span>
-                        <span class="skill-tag">Red Hat Enterprise Linux (RHEL)</span>
+                        <span class="skill-tag">Red Hat Enterprise Linux (RHEL 10)</span>
                         <span class="skill-tag">Oracle Linux</span>
                         <span class="skill-tag">FortiOS</span>
-                        <span class="skill-tag">FortiGate</span>
+                        <span class="skill-tag">FortiGate NGFW</span>
                         <span class="skill-tag">GNS3</span>
-                        <span class="skill-tag">Windows Server</span>
-                        <span class="skill-tag">Active Directory</span>
-                        <span class="skill-tag">Active Directory Domain Services</span>
+                        <span class="skill-tag">Windows Server 2022 Core</span>
+                        <span class="skill-tag">Active Directory (AD-DS)</span>
                         <span class="skill-tag" data-fr="Contrôleur de Domaine (AD-DS, DNS, DHCP)" data-en="Domain Controller (AD-DS, DNS, DHCP)">Contrôleur de Domaine (AD-DS, DNS, DHCP)</span>
+                        <span class="skill-tag">OpenSSH Server</span>
+                        <span class="skill-tag" data-fr="Durcissement SSH (Hardening)" data-en="SSH Hardening">Durcissement SSH (Hardening)</span>
+                        <span class="skill-tag">SELinux & Firewalld</span>
                         <span class="skill-tag">Windows 11 Enterprise</span>
                         <span class="skill-tag" data-fr="Bases Réseaux Informatiques" data-en="Networking Fundamentals">Bases Réseaux Informatiques</span>
                         <span class="skill-tag" data-fr="Modèle OSI" data-en="OSI Model">Modèle OSI</span>
                         <span class="skill-tag" data-fr="Modèle TCP/IP" data-en="TCP/IP Model">Modèle TCP/IP</span>
-                        <span class="skill-tag" data-fr="Équipements et supports réseaux" data-en="Network Devices & Media">Équipements et supports réseaux</span>
+                        <span class="skill-tag" data-fr="Service SSH (2237 / 2271)" data-en="SSH Service (2237 / 2271)">Service SSH (2237 / 2271)</span>
                         <span class="skill-tag" data-fr="Service DHCP" data-en="DHCP Service">Service DHCP</span>
                         <span class="skill-tag" data-fr="Service FTP" data-en="FTP Service">Service FTP</span>
-                        <span class="skill-tag" data-fr="Routage" data-en="Routing">Routage</span>
-                        <span class="skill-tag" data-fr="Commutation" data-en="Switching">Commutation</span>
+                        <span class="skill-tag" data-fr="Routage & Commutation" data-en="Routing & Switching">Routage & Commutation</span>
                         <span class="skill-tag" data-fr="Gestion Groupes/Utilisateurs" data-en="Users & Groups Management">Gestion Groupes/Utilisateurs</span>
-                        <span class="skill-tag" data-fr="Scripting Bash (automatisation)" data-en="Bash Scripting (Automation)">Scripting Bash (automatisation)</span>
+                        <span class="skill-tag" data-fr="Scripting Bash" data-en="Bash Scripting">Scripting Bash</span>
+                        <span class="skill-tag" data-fr="Scripting PowerShell" data-en="PowerShell Scripting">Scripting PowerShell</span>
                     </div>
                 </div>
                 <div class="project-card-mini">
-                    <code style="color: var(--primary-light); font-size: 0.75rem;"> bash heaven.sh </code>
+                    <code style="color: var(--primary-light); font-size: 0.75rem;"> bash setup_ssh_users.sh </code>
                 </div>
             </div>
 
@@ -401,10 +403,100 @@
                 </div>
             </div>
 
+            <!-- Project 7: SSH Server Security on Windows Server 2022 -->
+            <div class="bento-item large reveal" style="border: 2px solid var(--primary); background-color: #0b0f19; color: #fff;">
+                <div style="display: flex; justify-content: space-between; align-items: start; gap: 15px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 280px;">
+                        <h3 style="color: #fff;"
+                            data-fr="<i class='fas fa-terminal'></i> Serveur OpenSSH Sécurisé & Filtrage FortiGate (Windows Server 2022 Core)"
+                            data-en="<i class='fas fa-terminal'></i> Secure OpenSSH Server & FortiGate Filtering (Windows Server 2022 Core)">
+                            <i class="fas fa-terminal"></i> Serveur OpenSSH Sécurisé & Filtrage FortiGate (Windows Server 2022 Core)
+                        </h3>
+
+                        <p data-fr="Mise en production et durcissement (<em>Security by Design</em>) d'un serveur OpenSSH sur Windows Server 2022 Core. Implémentation d'une politique stricte de contrôle d'accès avec restriction d'authentification au groupe Active Directory <code>ssh_admins</code>, interdiction explicite du compte root/administrateur direct, port personnalisé (2237) et automatisation PowerShell. Publication via IP Virtuelle (VIP) et règles de filtrage d'un pare-feu FortiGate NGFW sous VMware Workstation Pro."
+                           data-en="Production deployment and hardening (<em>Security by Design</em>) of an OpenSSH server on Windows Server 2022 Core. Implementation of strict access control restricted to the Active Directory <code>ssh_admins</code> group, explicit root/administrator login blocking, custom port (2237), and PowerShell automation. Published via Virtual IP (VIP) and firewall rules on FortiGate NGFW under VMware Workstation Pro."></p>
+
+                        <div class="skills-wrap" style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span class="skill-tag">Security by Design</span>
+                            <span class="skill-tag">Windows Server 2022 Core</span>
+                            <span class="skill-tag">OpenSSH Server</span>
+                            <span class="skill-tag">Fortinet FortiGate NGFW</span>
+                            <span class="skill-tag">Active Directory (AD-DS)</span>
+                            <span class="skill-tag" data-fr="Scripting PowerShell" data-en="PowerShell Scripting">Scripting PowerShell</span>
+                            <span class="skill-tag" data-fr="Durcissement SSH (AllowGroups)" data-en="SSH Hardening (AllowGroups)">Durcissement SSH (AllowGroups)</span>
+                            <span class="skill-tag" data-fr="Redirection de Port VIP (2237)" data-en="VIP Port Forwarding (2237)">Redirection de Port VIP (2237)</span>
+                            <span class="skill-tag">VMware Workstation Pro</span>
+                        </div>
+                    </div>
+
+                    <span class="skill-tag orange" style="white-space: nowrap;"
+                          data-fr="PROJET FLAGSHIP SÉCURITÉ SYSTÈME"
+                          data-en="FLAGSHIP SYSTEM SECURITY PROJECT">
+                          PROJET FLAGSHIP SÉCURITÉ SYSTÈME
+                    </span>
+                </div>
+
+                <div class="project-card-mini" style="background: linear-gradient(90deg, #0f172a, #020617); margin-top: 20px; padding: 15px; border-radius: 8px;">
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <a href="https://rolandarseneguire.github.io/travauxadministrationlinux/"
+                           class="btn-main"
+                           data-fr="VOIR LE RAPPORT WINDOWS SERVER SSH"
+                           data-en="VIEW WINDOWS SERVER SSH REPORT">
+                           VOIR LE RAPPORT WINDOWS SERVER SSH
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8: SSH Server Security on Red Hat Enterprise Linux 10 -->
+            <div class="bento-item large reveal" style="border: 2px solid var(--primary); background-color: #0b0f19; color: #fff;">
+                <div style="display: flex; justify-content: space-between; align-items: start; gap: 15px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 280px;">
+                        <h3 style="color: #fff;"
+                            data-fr="<i class='fab fa-redhat'></i> Serveur SSH Sécurisé sous Red Hat Enterprise Linux 10 & Pare-feu FortiGate"
+                            data-en="<i class='fab fa-redhat'></i> Secure SSH Server on Red Hat Enterprise Linux 10 & FortiGate Firewall">
+                            <i class="fab fa-redhat"></i> Serveur SSH Sécurisé sous Red Hat Enterprise Linux 10 & Pare-feu FortiGate
+                        </h3>
+
+                        <p data-fr="Déploiement et durcissement d'un serveur OpenSSH sous <strong>Red Hat Enterprise Linux 10 (RHEL 10)</strong> via un fichier de politique de sécurité personnalisé (<code>ssh-policy.conf</code>). Restriction des connexions aux seuls membres du groupe <code>ssh_admins</code>, blocage du compte root, port écoute personnalisé (2271) configuré avec <strong>SELinux</strong> et <strong>firewalld</strong>, et automatisation complète par scripts Bash. Sécurisation périmétrique, NAT/VIP et inspection antivirus/IPS orchestrées par FortiGate NGFW."
+                           data-en="Deployment and hardening of an OpenSSH server on <strong>Red Hat Enterprise Linux 10 (RHEL 10)</strong> using a custom security policy file (<code>ssh-policy.conf</code>). Connection restricted to <code>ssh_admins</code> group members, root login disabled, custom listening port (2271) configured via <strong>SELinux</strong> and <strong>firewalld</strong>, with full Bash script automation. Perimeter security, NAT/VIP, and antivirus/IPS inspection handled by FortiGate NGFW."></p>
+
+                        <div class="skills-wrap" style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span class="skill-tag">Security by Design</span>
+                            <span class="skill-tag">Red Hat Enterprise Linux 10 (RHEL 10)</span>
+                            <span class="skill-tag">OpenSSH Server</span>
+                            <span class="skill-tag">Fortinet FortiGate NGFW</span>
+                            <span class="skill-tag">SELinux & Firewalld</span>
+                            <span class="skill-tag" data-fr="Scripting Bash" data-en="Bash Scripting">Scripting Bash</span>
+                            <span class="skill-tag" data-fr="Politique SSH Personnalisée" data-en="Custom SSH Policy">Politique SSH Personnalisée</span>
+                            <span class="skill-tag" data-fr="Redirection de Port VIP (2271)" data-en="VIP Port Forwarding (2271)">Redirection de Port VIP (2271)</span>
+                            <span class="skill-tag">VMware Workstation Pro</span>
+                        </div>
+                    </div>
+
+                    <span class="skill-tag orange" style="white-space: nowrap;"
+                          data-fr="PROJET FLAGSHIP LINUX & SÉCURITÉ"
+                          data-en="FLAGSHIP LINUX & SECURITY PROJECT">
+                          PROJET FLAGSHIP LINUX & SÉCURITÉ
+                    </span>
+                </div>
+
+                <div class="project-card-mini" style="background: linear-gradient(90deg, #0f172a, #020617); margin-top: 20px; padding: 15px; border-radius: 8px;">
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <a href="https://rolandarseneguire.github.io/travauxadministrationlinux/"
+                           class="btn-main"
+                           data-fr="VOIR LE RAPPORT RHEL SSH"
+                           data-en="VIEW RHEL SSH REPORT">
+                           VOIR LE RAPPORT RHEL SSH
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Education -->
             <div class="bento-item reveal">
                 <h3 data-fr="<i class='fas fa-graduation-cap'></i> Formation Académique" data-en="<i class='fas fa-graduation-cap'></i> Academic Education"><i class="fas fa-graduation-cap"></i> Formation Académique</h3>
-                <p data-fr="<strong>Licence 3 Informatique (En cours)</strong><br>Parcours Mathématiques-Informatique<br>Univ. Nangui Abrogoua (UNA)" data-en="<strong>Bachelor's Degree in Computer Science (Ongoing)</strong><br>Mathematics & Computer Science Curriculum<br>Nangui Abrogoua University (UNA)"></p>
+                <p data-fr="<strong>Licence Informatique</strong><br>(Mathématiques-Informatique)<br>" data-en="<strong>Bachelor in Computer Science</strong><br>(Mathematics and Computer Science)<br>"></p>
             </div>
 
             <!-- IT Certs -->
