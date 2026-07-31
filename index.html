@@ -184,6 +184,7 @@
                         <span class="skill-tag">VMware</span>
                         <span class="skill-tag">Red Hat Enterprise Linux (RHEL 10)</span>
                         <span class="skill-tag">Oracle Linux</span>
+                        <span class="skill-tag">Kea DHCP Server</span>
                         <span class="skill-tag">FortiOS</span>
                         <span class="skill-tag">FortiGate NGFW</span>
                         <span class="skill-tag">GNS3</span>
@@ -198,7 +199,8 @@
                         <span class="skill-tag" data-fr="Modèle OSI" data-en="OSI Model">Modèle OSI</span>
                         <span class="skill-tag" data-fr="Modèle TCP/IP" data-en="TCP/IP Model">Modèle TCP/IP</span>
                         <span class="skill-tag" data-fr="Service SSH (2237 / 2271)" data-en="SSH Service (2237 / 2271)">Service SSH (2237 / 2271)</span>
-                        <span class="skill-tag" data-fr="Service DHCP" data-en="DHCP Service">Service DHCP</span>
+                        <span class="skill-tag" data-fr="Service DHCP & Kea" data-en="DHCP & Kea Service">Service DHCP & Kea</span>
+                        <span class="skill-tag" data-fr="DHCP Relay / Agent Relais" data-en="DHCP Relay / Relay Agent">DHCP Relay / Agent Relais</span>
                         <span class="skill-tag" data-fr="Service FTP" data-en="FTP Service">Service FTP</span>
                         <span class="skill-tag" data-fr="Routage & Commutation" data-en="Routing & Switching">Routage & Commutation</span>
                         <span class="skill-tag" data-fr="Gestion Groupes/Utilisateurs" data-en="Users & Groups Management">Gestion Groupes/Utilisateurs</span>
@@ -493,10 +495,58 @@
                 </div>
             </div>
 
+            <!-- Project 9: Kea DHCP Server & FortiGate Relay Agent -->
+            <div class="bento-item large reveal" style="border: 2px solid var(--primary); background-color: #0b0f19; color: #fff;">
+                <div style="display: flex; justify-content: space-between; align-items: start; gap: 15px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 280px;">
+                        <h3 style="color: #fff;"
+                            data-fr="<i class='fas fa-network-wired'></i> Serveur DHCP Kea (RHEL) & Relais DHCP FortiGate NGFW"
+                            data-en="<i class='fas fa-network-wired'></i> Kea DHCP Server (RHEL) & FortiGate NGFW DHCP Relay">
+                            <i class="fas fa-network-wired"></i> Serveur DHCP Kea (RHEL) & Relais DHCP FortiGate NGFW
+                        </h3>
+
+                        <p data-fr="Déploiement et sécurisation d'un serveur DHCP moderne <strong>Kea DHCP</strong> sous Red Hat Enterprise Linux (RHEL), interconnecté via un pare-feu <strong>FortiGate NGFW</strong> agissant comme agent relais (<em>DHCP Relay</em>). Architecture segmentée distribuée orchestrée sous <strong>GNS3</strong> et <strong>VMware Workstation Pro</strong>, permettant l'attribution dynamique sécurisée de baux IP, d'options de sous-réseau et de résolutions DNS aux clients distants <strong>Windows 10 Enterprise</strong> à travers des politiques de sécurité strictes."
+                           data-en="Deployment and securing of a modern <strong>Kea DHCP</strong> server on Red Hat Enterprise Linux (RHEL), interconnected via a <strong>FortiGate NGFW</strong> firewall operating as a <em>DHCP Relay Agent</em>. Distributed segmented architecture orchestrated under <strong>GNS3</strong> and <strong>VMware Workstation Pro</strong>, enabling secure dynamic IP lease allocation, subnet options, and DNS resolution to remote <strong>Windows 10 Enterprise</strong> clients across strict firewall policies."></p>
+
+                        <div class="skills-wrap" style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span class="skill-tag">Security by Design</span>
+                            <span class="skill-tag">Red Hat Enterprise Linux (RHEL)</span>
+                            <span class="skill-tag">Kea DHCP Server</span>
+                            <span class="skill-tag">Fortinet FortiGate NGFW</span>
+                            <span class="skill-tag" data-fr="Agent Relais DHCP (DHCP Relay)" data-en="DHCP Relay Agent">Agent Relais DHCP (DHCP Relay)</span>
+                            <span class="skill-tag">GNS3 & VMware Workstation</span>
+                            <span class="skill-tag">Windows 10 Enterprise</span>
+                            <span class="skill-tag" data-fr="Routage & Isolation de Sous-réseaux" data-en="Routing & Subnet Isolation">Routage & Isolation de Sous-réseaux</span>
+                        </div>
+                    </div>
+
+                    <span class="skill-tag orange" style="white-space: nowrap;"
+                          data-fr="PROJET FLAGSHIP ARCHITECTURE RÉSEAU"
+                          data-en="FLAGSHIP NETWORK ARCHITECTURE PROJECT">
+                          PROJET FLAGSHIP ARCHITECTURE RÉSEAU
+                    </span>
+                </div>
+
+                <div class="project-card-mini" style="background: linear-gradient(90deg, #0f172a, #020617); margin-top: 20px; padding: 15px; border-radius: 8px;">
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <a href="https://rolandarseneguire.github.io/travauxadministrationlinux/"
+                           class="btn-main"
+                           data-fr="VOIR LE RAPPORT DHCPSERVER KEA"
+                           data-en="VIEW KEA DHCP SERVER REPORT">
+                           VOIR LE RAPPORT DHCPSERVER KEA
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Education -->
             <div class="bento-item reveal">
-                <h3 data-fr="<i class='fas fa-graduation-cap'></i> Formation Académique" data-en="<i class='fas fa-graduation-cap'></i> Academic Education"><i class="fas fa-graduation-cap"></i> Formation Académique</h3>
-                <p data-fr="<strong>Licence Informatique</strong><br>(Mathématiques-Informatique)<br>" data-en="<strong>Bachelor in Computer Science</strong><br>(Mathematics and Computer Science)<br>"></p>
+                <h3 data-fr="<i class='fas fa-graduation-cap'></i> Formation Académique" data-en="<i class='fas fa-graduation-cap'></i> Academic Education">
+                    <i class="fas fa-graduation-cap"></i> Formation Académique
+                </h3>
+                <p data-fr="<strong>Master 1 Génie Informatique</strong><br><br><strong>Licence 3 Informatique</strong><br>(Mathématiques-Informatique)" 
+                   data-en="<strong>Master 1 in Computer Engineering</strong><br><br><strong>Bachelor in Computer Science</strong><br>(Mathematics and Computer Science)">
+                </p>
             </div>
 
             <!-- IT Certs -->
