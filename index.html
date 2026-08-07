@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arsène Roland GUIRE Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Certifications | Arsène Roland GUIRE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -15,11 +15,13 @@
             --accent: #f97316;
             --bg: #030712;
             --card: rgba(17, 24, 39, 0.8);
-            --border: rgba(0, 113, 197, 0.3);
+            --border: rgba(0, 113, 197, 0.25);
             --text: #f8fafc;
             --text-light: #94a3b8;
             --glass: blur(12px);
-            --shadow: 0 20px 40px rgba(0,0,0,0.6);
+            --shadow: 0 20px 40px rgba(0,0,0,0.5);
+            --success: #10b981;
+            --warning: #f59e0b;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -30,9 +32,9 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
             background-image:
-                radial-gradient(circle at 50% 0%, rgba(0, 113, 197, 0.1), transparent),
-                linear-gradient(rgba(0, 113, 197, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 113, 197, 0.02) 1px, transparent 1px);
+                radial-gradient(circle at 50% 0%, rgba(0, 113, 197, 0.08), transparent),
+                linear-gradient(rgba(0, 113, 197, 0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 113, 197, 0.015) 1px, transparent 1px);
             background-size: 100% 100%, 35px 35px, 35px 35px;
         }
 
@@ -52,529 +54,344 @@
         }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* --- NAV --- */
-        nav {
+        /* --- NAV & TOP-BAR --- */
+        .top-container {
             position: fixed; top: 25px; left: 50%; transform: translateX(-50%);
+            width: 100%; max-width: 1400px; padding: 0 20px;
+            display: flex; justify-content: space-between; align-items: center; z-index: 999;
+        }
+        nav {
             background: var(--card); backdrop-filter: var(--glass);
-            padding: 10px 25px; border-radius: 10px; border: 1px solid var(--border);
-            display: flex; gap: 12px; align-items: center; z-index: 999; box-shadow: var(--shadow);
+            padding: 10px 30px; border-radius: 10px; border: 1px solid var(--border);
+            display: flex; gap: 20px; box-shadow: var(--shadow);
+            margin: 0 auto;
         }
         nav a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.85rem; opacity: 0.6; transition: 0.3s; padding: 8px 15px; border-radius: 50px; }
         nav a:hover { opacity: 1; color: var(--primary-light); background: rgba(0, 113, 197, 0.1); }
 
-        /* --- BOUTON LANGUE --- */
         .lang-switch {
-            background: rgba(0, 113, 197, 0.15);
-            border: 1px solid var(--primary-light);
-            color: var(--primary-light);
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            background: var(--card); backdrop-filter: var(--glass);
+            border: 1px solid var(--border); color: var(--primary-light);
+            padding: 12px 18px; border-radius: 10px; font-size: 0.75rem;
+            font-weight: 700; cursor: pointer; transition: 0.3s;
+            display: flex; align-items: center; gap: 6px; box-shadow: var(--shadow);
         }
-        .lang-switch:hover {
-            background: var(--primary-light);
-            color: #020617;
-        }
+        .lang-switch:hover { background: var(--primary-light); color: #020617; border-color: var(--primary-light); }
 
         /* --- HERO --- */
         .hero {
-            min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; padding: 120px 20px 60px;
+            min-height: 40vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 140px 20px 40px;
         }
-        .profile-img {
-            width: 150px; height: 150px; border-radius: 10%;
-            border: 3px solid var(--primary); margin-bottom: 25px;
-            object-fit: cover; box-shadow: 0 0 30px rgba(0, 113, 197, 0.3);
-        }
-        .badge-dev { background: var(--card); padding: 8px 20px; border-radius: 2px; border: 1px solid var(--border); font-size: 0.85rem; margin-bottom: 20px; font-weight: 600; color: var(--primary-light); line-height: 1.4; }
-        .hero h1 { font-size: 2.9rem; font-weight: 100; letter-spacing: -2px; line-height: 1; margin-bottom: 20px; }
-        .hero h1 span { background: linear-gradient(90deg, var(--primary-light), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .badge-dev { background: var(--card); padding: 8px 20px; border-radius: 2px; border: 1px solid var(--border); font-size: 0.85rem; margin-bottom: 20px; font-weight: 600; color: var(--primary-light); }
+        .hero h1 { font-size: 2.9rem; font-weight: 300; letter-spacing: -2px; line-height: 1; margin-bottom: 15px; }
+        .hero h1 span { background: linear-gradient(90deg, var(--primary-light), #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
+        .hero p { color: var(--text-light); max-width: 600px; font-size: 0.95rem; line-height: 1.6; }
 
         /* --- BENTO GRID --- */
-        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
-        .bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px 20px 60px; }
+        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+
         .bento-item {
             background: var(--card); backdrop-filter: var(--glass);
-            border: 1px solid var(--border); border-radius: 2px; padding: 30px;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid var(--border); border-radius: 4px; padding: 30px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             display: flex; flex-direction: column; justify-content: space-between;
+            position: relative; overflow: hidden;
         }
-        .bento-item:hover { border-color: var(--primary-light); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 113, 197, 0.2); }
-        .bento-item h3 { font-size: 1.2rem; margin-bottom: 15px; color: var(--primary-light); display: flex; align-items: center; gap: 10px; }
-        .bento-item p { color: var(--text-light); font-size: 0.9rem; line-height: 1.6; }
+        .bento-item:hover { border-color: var(--primary-light); transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0, 113, 197, 0.15); }
 
-        .large { grid-column: span 2; }
-        .tall { grid-row: span 2; }
+        .cert-status {
+            position: absolute; top: 20px; right: 20px;
+            font-size: 0.7rem; font-weight: 800; padding: 4px 10px; border-radius: 2px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .status-verified { background: rgba(16, 185, 129, 0.1); color: var(--success); border: 1px solid rgba(16, 185, 129, 0.2); }
+        .status-progress { background: rgba(245, 158, 11, 0.1); color: var(--warning); border: 1px solid rgba(245, 158, 11, 0.2); }
+
+        .cert-icon { font-size: 1.8rem; color: var(--primary-light); margin-bottom: 15px; }
+        .bento-item h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; color: #fff; padding-right: 90px; line-height: 1.4; }
+        .cert-authority { font-size: 0.85rem; color: var(--primary-light); font-weight: 600; margin-bottom: 15px; }
+        .bento-item p { color: var(--text-light); font-size: 0.88rem; line-height: 1.6; margin-bottom: 20px; }
+
+        /* --- INTÉGRATION PDF APERÇU --- */
+        .pdf-container {
+            position: relative; width: 100%; height: 260px; background: #020617;
+            border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 2px;
+            overflow: hidden; margin-bottom: 20px; margin-top: auto;
+        }
+        .pdf-container embed { width: 100%; height: 100%; border: none; }
+
+        /* Zone fallback pour les morceaux de code ou simulations */
+        .code-preview { background: #000; border: 1px dashed var(--border); padding: 15px; border-radius: 2px; margin-bottom: 20px; font-family: monospace; }
+
+        /* --- METADATA PANEL --- */
+        .cert-meta {
+            background: rgba(0, 0, 0, 0.2); border: 1px dashed rgba(0, 113, 197, 0.15);
+            padding: 12px; border-radius: 2px; font-family: monospace; font-size: 0.78rem; margin-bottom: 20px;
+        }
+        .meta-label { color: var(--text-light); }
+        .meta-value { color: var(--primary-light); }
 
         /* --- SKILLS --- */
-        .skills-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
-        .skill-tag { padding: 5px 12px; background: rgba(0, 113, 197, 0.1); color: var(--primary-light); border-radius: 2px; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(0, 113, 197, 0.2); }
-        .skill-tag.orange { color: var(--accent); background: rgba(249, 115, 22, 0.1); border-color: rgba(249, 115, 22, 0.2); }
-
-        .project-card-mini { background: #000; border-radius: 1px; padding: 15px; margin-top: 15px; border: 1px dashed var(--border); text-align: center; }
+        .skills-wrap { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+        .skill-tag { padding: 4px 10px; background: rgba(0, 113, 197, 0.08); color: var(--primary-light); border-radius: 2px; font-size: 0.7rem; font-weight: 700; border: 1px solid rgba(0, 113, 197, 0.15); }
 
         /* --- BTN --- */
-        .btn-main { padding: 12px 25px; background: var(--primary); color: #fff; border: none; border-radius: 1px; font-weight: 700; text-decoration: none; transition: 0.3s; display: inline-block; }
-        .btn-main:hover { background: var(--primary-light); box-shadow: 0 0 20px var(--primary); text-shadow: none; color: #020617; }
+        .btn-main { padding: 12px 20px; background: var(--primary); color: #fff; border: none; border-radius: 2px; font-weight: 700; text-decoration: none; transition: 0.3s; display: block; text-align: center; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn-main:hover { background: var(--primary-light); box-shadow: 0 0 20px rgba(0, 199, 255, 0.4); color: #020617; }
+        .btn-secondary { background: transparent; border: 1px solid var(--border); color: var(--text-light); }
+        .btn-secondary:disabled { opacity: 0.4; cursor: not-allowed; border-style: dashed; }
 
         .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        @media (max-width: 1024px) { .bento-grid { grid-template-columns: repeat(2, 1fr); } .hero h1 { font-size: 3rem; } }
-        @media (max-width: 768px) { nav { gap: 5px; padding: 10px 15px; } nav a { padding: 6px 10px; font-size: 0.8rem; } }
-        @media (max-width: 600px) { .bento-grid { grid-template-columns: 1fr; } .large, .tall { grid-column: span 1; grid-row: span 1; } }
+        @media (max-width: 1100px) { .bento-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) {
+            .top-container { position: absolute; flex-direction: column-reverse; gap: 15px; top: 15px; }
+            .bento-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.3rem; }
+        }
     </style>
 </head>
 <body>
 
     <div id="loader">
         <div class="loader-circle"></div>
-        <p id="loader-text" style="color: var(--primary-light); margin-top: 15px; font-weight: 700; letter-spacing: 2px;" data-fr="Bienvenue sur mon profil..." data-en="Welcome to my profile...">Bienvenue sur mon profil...</p>
+        <p id="loaderText" style="color: var(--primary-light); margin-top: 15px; font-weight: 700; letter-spacing: 2px;" data-fr="Chargement des certifications..." data-en="Loading certifications..."></p>
     </div>
 
-    <nav>
-        <a href="#home" data-fr="Accueil" data-en="Home">Accueil</a>
-        <a href="#expertise" data-fr="Expertise" data-en="Expertise">Expertise</a>
-        <a href="#projects-anchor" data-fr="Projets" data-en="Projects">Projets</a>
-        <a href="mailto:guireroland623@gmail.com">Contact</a>
+    <div class="top-container">
+        <nav>
+            <a href="https://rolandarseneguire.github.io/mapage/" data-fr="Portfolio" data-en="Portfolio">Portfolio</a>
+            <a href="#list" data-fr="Certifications" data-en="Certifications">Certifications</a>
+            <a href="mailto:guireroland623@gmail.com" data-fr="Contact" data-en="Contact">Contact</a>
+        </nav>
         <button class="lang-switch" id="langBtn"><i class="fas fa-globe"></i> <span>EN</span></button>
-    </nav>
+    </div>
 
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="reveal">
-            <img src="img/Profil.jpeg" alt="Arsène Roland GUIRE" class="profile-img">
-            <div class="badge-dev"
-                 data-fr="<i class='fas fa-microchip'></i> Étudiant en Sciences Informatiques | Aspirant Spécialiste IT"
-                 data-en="<i class='fas fa-microchip'></i> Computer Science Student | Aspiring IT Specialist">
-                <i class="fas fa-microchip"></i> Étudiant en Sciences Informatiques | Aspirant Spécialiste IT
+            <div class="badge-dev" data-fr="<i class='fas fa-shield-alt'></i> Validation des Compétences Techniques" data-en="<i class='fas fa-shield-alt'></i> Technical Skills Validation">
+                 <i class="fas fa-shield-alt"></i> Validation des Compétences Techniques
             </div>
-            <h1>Arsène Roland<br><span>GUIRE</span></h1>
-            <p style="margin-top: 25px; font-weight: 600;" data-fr="<i class='fas fa-map-marker-alt' style='color: var(--accent);'></i> Abidjan, Côte d'Ivoire" data-en="<i class='fas fa-map-marker-alt' style='color: var(--accent);'></i> Abidjan, Ivory Coast"><i class='fas fa-map-marker-alt' style='color: var(--accent);'></i> Abidjan, Côte d'Ivoire</p>
+            <h1 data-fr="Mes <span>Certifications</span>" data-en="My <span>Certifications</span>">Mes <span>Certifications</span></h1>
+            <p data-fr="Index officiel de mes certifications en informatique et technologies numériques." data-en="Official repository of my certifications in computer science and digital technologies."></p>
         </div>
     </section>
 
-    <div class="container" id="expertise">
+    <div class="container" id="list">
         <div class="bento-grid">
 
-            <!-- Software Engineering -->
-            <div class="bento-item large reveal">
+            <!-- CERT 1 : Linux Essentials -->
+            <div class="bento-item reveal">
+                <span class="cert-status status-verified" data-fr="<i class='fas fa-check-circle'></i> Validée" data-en="<i class='fas fa-check-circle'></i> Verified"><i class="fas fa-check-circle"></i> Validée</span>
                 <div>
-                    <h3 data-fr="<i class='fas fa-drafting-compass'></i> Ingénierie de Conception Logicielle" data-en="<i class='fas fa-drafting-compass'></i> Software Design Engineering"><i class="fas fa-drafting-compass"></i> Ingénierie de Conception Logicielle </h3>
-                    <p data-fr="Expertise en modélisation de systèmes d'information complexes (UML). Je transforme des problématiques métiers en architectures systèmes documentées et évolutives." data-en="Expertise in complex information systems modeling (UML). I translate business requirements into fully documented and scalable system architectures."></p>
+                    <div class="cert-icon"><i class="fab fa-linux"></i></div>
+                    <h3 data-fr="Linux Essentials" data-en="Linux Essentials">Linux Essentials</h3>
+                    <div class="cert-authority">Cisco Networking Academy / NDG</div>
+                    <p data-fr="Maîtrise du système d'exploitation Linux, navigation dans le système de fichiers, exécution de commandes avancées en ligne de commande (CLI) et gestion de la sécurité et des permissions de fichiers." data-en="Understanding of the Linux operating system, ability to navigate a Linux system, execution of command-line operations, and knowledge of Linux security and file permissions."></p>
                 </div>
-                <div class="skills-wrap">
-                    <span class="skill-tag" data-fr="Modélisation UML" data-en="UML Modeling">Modélisation UML</span>
-                    <span class="skill-tag" data-fr="Génie Logiciel" data-en="Software Engineering">Génie Logiciel</span>
-                    <span class="skill-tag" data-fr="Programmation Orientée Objet (POO)" data-en="Object-Oriented Programming (OOP)">Programmation Orientée Objet (POO)</span>
-                </div>
-            </div>
-
-            <!-- Systems & Networks -->
-            <div class="bento-item tall reveal">
                 <div>
-                    <h3 data-fr="<i class='fab fa-linux'></i> Infrastructure Réseau et Système" data-en="<i class='fab fa-linux'></i> Systems and Networks Infrastructure"><i class="fab fa-linux"></i>Infrastructure Réseau et Système </h3>
-                    <p data-fr="Gestion d'environnements Client-Serveur sous Red Hat Enterprise Linux (RHEL) et Windows Server. Architecture Réseaux, administration distante et durcissement d'infrastructure (Security by Design)." data-en="Management of Client-Server environments running Red Hat Enterprise Linux (RHEL) and Windows Server. Network architecture, secure remote administration and infrastructure hardening (Security by Design)."></p>
+                    <div class="cert-meta">
+                        <div data-fr="<span class='meta-label'>Date d'obtention :</span> <span class='meta-value'>07/08/2026</span>" data-en="<span class='meta-label'>Issue Date:</span> <span class='meta-value'>08/07/2026</span>"></div>
+                    </div>
                     <div class="skills-wrap">
-                        <span class="skill-tag">VMware</span>
-                        <span class="skill-tag">Red Hat Enterprise Linux (RHEL 10)</span>
-                        <span class="skill-tag">Oracle Linux</span>
-                        <span class="skill-tag">Kea DHCP Server</span>
-                        <span class="skill-tag">FortiOS</span>
-                        <span class="skill-tag">FortiGate NGFW</span>
-                        <span class="skill-tag">GNS3</span>
-                        <span class="skill-tag">Windows Server 2022 Core</span>
-                        <span class="skill-tag">Active Directory (AD-DS)</span>
-                        <span class="skill-tag" data-fr="Contrôleur de Domaine (AD-DS, DNS, DHCP)" data-en="Domain Controller (AD-DS, DNS, DHCP)">Contrôleur de Domaine (AD-DS, DNS, DHCP)</span>
-                        <span class="skill-tag">OpenSSH Server</span>
-                        <span class="skill-tag" data-fr="Durcissement SSH (Hardening)" data-en="SSH Hardening">Durcissement SSH (Hardening)</span>
-                        <span class="skill-tag">SELinux & Firewalld</span>
-                        <span class="skill-tag">Windows 11 Enterprise</span>
-                        <span class="skill-tag" data-fr="Bases Réseaux Informatiques" data-en="Networking Fundamentals">Bases Réseaux Informatiques</span>
-                        <span class="skill-tag" data-fr="Modèle OSI" data-en="OSI Model">Modèle OSI</span>
-                        <span class="skill-tag" data-fr="Modèle TCP/IP" data-en="TCP/IP Model">Modèle TCP/IP</span>
-                        <span class="skill-tag" data-fr="Service SSH (2237 / 2271)" data-en="SSH Service (2237 / 2271)">Service SSH (2237 / 2271)</span>
-                        <span class="skill-tag" data-fr="Service DHCP & Kea" data-en="DHCP & Kea Service">Service DHCP & Kea</span>
-                        <span class="skill-tag" data-fr="DHCP Relay / Agent Relais" data-en="DHCP Relay / Relay Agent">DHCP Relay / Agent Relais</span>
-                        <span class="skill-tag" data-fr="Service FTP" data-en="FTP Service">Service FTP</span>
-                        <span class="skill-tag" data-fr="Routage & Commutation" data-en="Routing & Switching">Routage & Commutation</span>
-                        <span class="skill-tag" data-fr="Gestion Groupes/Utilisateurs" data-en="Users & Groups Management">Gestion Groupes/Utilisateurs</span>
-                        <span class="skill-tag" data-fr="Scripting Bash" data-en="Bash Scripting">Scripting Bash</span>
-                        <span class="skill-tag" data-fr="Scripting PowerShell" data-en="PowerShell Scripting">Scripting PowerShell</span>
+                        <span class="skill-tag">Linux System</span>
+                        <span class="skill-tag" data-fr="Ligne de commande (CLI)" data-en="Command Line (CLI)">Ligne de commande (CLI)</span>
+                        <span class="skill-tag" data-fr="Permissions & Droits" data-en="File Permissions">Permissions & Droits</span>
+                        <span class="skill-tag" data-fr="Sécurité Linux" data-en="Linux Security">Sécurité Linux</span>
                     </div>
-                </div>
-                <div class="project-card-mini">
-                    <code style="color: var(--primary-light); font-size: 0.75rem;"> SECURITY BY DESIGN </code>
+                    <div class="pdf-container">
+                        <embed src="Linux.pdf" type="application/pdf" />
+                    </div>
+                    <a href="Linux.pdf" target="_blank" class="btn-main" data-fr="<i class='fas fa-external-link-alt'></i> Ouvrir le document" data-en="<i class='fas fa-external-link-alt'></i> Open document"><i class="fas fa-external-link-alt"></i> Ouvrir le document</a>
                 </div>
             </div>
 
-            <!-- Algorithmics -->
+            <!-- CERT 2 : Linux Unhatched (Nouvelle) -->
             <div class="bento-item reveal">
-                <h3 data-fr="<i class='fas fa-bolt'></i> Algorithmique" data-en="<i class='fas fa-bolt'></i> Algorithms"><i class="fas fa-bolt"></i>Algorithmique</h3>
-                <p data-fr="Analyse de la complexité spatio-temporelle et optimisation des performances d'exécution." data-en="Time and space complexity analysis and code runtime performance optimization."></p>
-                <div class="skills-wrap">
-                    <span class="skill-tag" data-fr="Analyse de complexité" data-en="Complexity Analysis">Analyse de complexité</span>
-                    <span class="skill-tag" data-fr="Optimisation de code" data-en="Code Optimization">Optimisation de code</span>
+                <span class="cert-status status-verified" data-fr="<i class='fas fa-check-circle'></i> Validée" data-en="<i class='fas fa-check-circle'></i> Verified"><i class="fas fa-check-circle"></i> Validée</span>
+                <div>
+                    <div class="cert-icon"><i class="fab fa-terminal"></i></div>
+                    <h3 data-fr="Linux Unhatched" data-en="Linux Unhatched">Linux Unhatched</h3>
+                    <div class="cert-authority">Cisco Networking Academy / NDG</div>
+                    <p data-fr="Initiation fondamentale au système Linux : manipulation de répertoires et fichiers, création de scripts Bash simples, gestion des utilisateurs, droits d'accès et inspection des configurations réseau de base." data-en="Fundamental introduction to Linux: directory and file manipulation, writing basic Bash scripts, user management, file permissions, and basic network configuration queries."></p>
+                </div>
+                <div>
+                    <div class="cert-meta">
+                        <div data-fr="<span class='meta-label'>Date d'obtention :</span> <span class='meta-value'>07/08/2026</span>" data-en="<span class='meta-label'>Issue Date:</span> <span class='meta-value'>08/07/2026</span>"></div>
+                    </div>
+                    <div class="skills-wrap">
+                        <span class="skill-tag" data-fr="Commandes de Base" data-en="Basic Commands">Commandes de Base</span>
+                        <span class="skill-tag" data-fr="Scripts Shell" data-en="Shell Scripts">Scripts Shell</span>
+                        <span class="skill-tag" data-fr="Gestion Utilisateurs" data-en="User Management">Gestion Utilisateurs</span>
+                        <span class="skill-tag" data-fr="Configuration Réseau" data-en="Network Config">Configuration Réseau</span>
+                    </div>
+                    <div class="pdf-container">
+                        <embed src="Linux-2.pdf" type="application/pdf" />
+                    </div>
+                    <a href="Linux-2.pdf" target="_blank" class="btn-main" data-fr="<i class='fas fa-external-link-alt'></i> Ouvrir le document" data-en="<i class='fas fa-external-link-alt'></i> Open document"><i class="fas fa-external-link-alt"></i> Ouvrir le document</a>
                 </div>
             </div>
 
-            <!-- DBMS -->
+            <!-- CERT 3 : Network Security Fundamentals -->
             <div class="bento-item reveal">
-                <h3 data-fr="<i class='fas fa-database'></i> Systèmes de Gestion de Bases de Données (SGBD)" data-en="<i class='fas fa-database'></i> Database Management Systems (DBMS)"><i class="fas fa-database"></i>Systèmes de Gestion de Bases de Données (SGBD)</h3>
-                <p data-fr="Fouille de données (Data Mining) sur bases SQL avancées pour l'extraction de connaissances. Connaissance approfondie de l'architecture de la base de données Oracle." data-en="Data Mining on advanced SQL databases for knowledge extraction. In-depth understanding of Oracle Database core architecture."></p>
-                <div class="skills-wrap">
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">Oracle Database</span>
-                    <span class="skill-tag" data-fr="Architecture Oracle Database" data-en="Oracle Database Architecture">Architecture Oracle Database</span>
-                    <span class="skill-tag" data-fr="Data Mining / Fouille" data-en="Data Mining">Data Mining / Fouille</span>
+                <span class="cert-status status-verified" data-fr="<i class='fas fa-check-circle'></i> Validée" data-en="<i class='fas fa-check-circle'></i> Verified"><i class="fas fa-check-circle"></i> Validée</span>
+                <div>
+                    <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3 data-fr="Network Security Fundamentals" data-en="Network Security Fundamentals">Network Security Fundamentals</h3>
+                    <div class="cert-authority">Palo Alto Networks</div>
+                    <p data-fr="Maîtrise des protocoles de routage, routage statique/dynamique, commutation (Switching), segmentation de réseaux Ethernet et plan d'adressage complexe IPv4/IPv6." data-en="Mastery of routing protocols, static/dynamic routing, switching, Ethernet network segmentation, and complex IPv4/IPv6 addressing schemas."></p>
+                </div>
+                <div>
+                    <div class="cert-meta">
+                        <div data-fr="<span class='meta-label'>Date d'obtention :</span> <span class='meta-value'>19/06/2026</span>" data-en="<span class='meta-label'>Issue Date:</span> <span class='meta-value'>06/19/2026</span>"></div>
+                    </div>
+                    <div class="skills-wrap">
+                        <span class="skill-tag">Modèle OSI & TCP/IP</span>
+                        <span class="skill-tag" data-fr="Adressage IPv4/IPv6" data-en="IPv4/IPv6 Addressing">Adressage IPv4/IPv6</span>
+                        <span class="skill-tag">Routing & Switching</span>
+                        <span class="skill-tag" data-fr="Sécurité Sans-fil" data-en="Wireless Security">Sécurité Sans-fil</span>
+                    </div>
+                    <div class="pdf-container">
+                        <embed src="Networkpalo.pdf" type="application/pdf" />
+                    </div>
+                    <a href="Networkpalo.pdf" target="_blank" class="btn-main" data-fr="<i class='fas fa-external-link-alt'></i> Ouvrir le document" data-en="<i class='fas fa-external-link-alt'></i> Open document"><i class="fas fa-external-link-alt"></i> Ouvrir le document</a>
                 </div>
             </div>
 
-            <!-- Software Implementation -->
+            <!-- CERT 4 : Hardware Basics -->
             <div class="bento-item reveal">
-                <h3 data-fr="<i class='fas fa-mobile-alt'></i> Implémentation Logicielle" data-en="<i class='fas fa-mobile-alt'></i> Software Implementation"><i class="fas fa-mobile-alt"></i> Implémentation Logicielle</h3>
-                <p data-fr="Conception et développement d'applications Web & Mobile modernes." data-en="Design and development of modern Web & Mobile software applications."></p>
-                <div class="skills-wrap">
-                    <span class="skill-tag">Python / Django</span>
-                    <span class="skill-tag">Dart / Flutter</span>
-                    <span class="skill-tag">UI/UX Design</span>
+                <span class="cert-status status-verified" data-fr="<i class='fas fa-check-circle'></i> Validée" data-en="<i class='fas fa-check-circle'></i> Verified"><i class="fas fa-check-circle"></i> Validée</span>
+                <div>
+                    <div class="cert-icon"><i class="fas fa-microchip"></i></div>
+                    <h3 data-fr="Hardware Basics" data-en="Hardware Basics">Hardware Basics</h3>
+                    <div class="cert-authority">Cisco Networking Academy</div>
+                    <p data-fr="Validation des compétences en maintenance et support matériel : installation des composants, architecture des terminaux mobiles et application des normes de sécurité physique." data-en="Validation of hardware support and maintenance skills: component installation, mobile architecture, and physical safety compliance."></p>
+                </div>
+                <div>
+                    <div class="cert-meta">
+                        <div data-fr="<span class='meta-label'>Date d'obtention :</span> <span class='meta-value'>20/06/2026</span>" data-en="<span class='meta-label'>Issue Date:</span> <span class='meta-value'>06/20/2026</span>"></div>
+                    </div>
+                    <div class="skills-wrap">
+                        <span class="skill-tag" data-fr="Assemblage PC" data-en="PC Assembly">Assemblage PC</span>
+                        <span class="skill-tag" data-fr="Maintenance Préventive" data-en="Preventive Maintenance">Maintenance Préventive</span>
+                        <span class="skill-tag">Hardware Mobile</span>
+                        <span class="skill-tag" data-fr="Normes HSE" data-en="HSE Standards">Normes HSE</span>
+                    </div>
+                    <div class="pdf-container">
+                        <embed src="Hardware.pdf" type="application/pdf" />
+                    </div>
+                    <a href="Hardware.pdf" target="_blank" class="btn-main" data-fr="<i class='fas fa-external-link-alt'></i> Ouvrir le document" data-en="<i class='fas fa-external-link-alt'></i> Open document"><i class="fas fa-external-link-alt"></i> Ouvrir le document</a>
                 </div>
             </div>
 
-            <!-- AI Integration -->
+            <!-- CERT 5 : Networking Basics -->
             <div class="bento-item reveal">
-                <h3 data-fr="<i class='fas fa-robot'></i> Intégration de l'IA" data-en="<i class='fas fa-robot'></i> AI Integration"><i class="fas fa-robot"></i> Intégration de l'IA</h3>
-                <p data-fr="Utilisation avancée des outils d'IA générative pour l'optimisation des flux de développement et le prompt engineering." data-en="Advanced usage of generative AI tools for workflow optimization and technical prompt engineering."></p>
-                <div class="skills-wrap">
-                    <span class="skill-tag">Gemini (Google AI)</span>
-                    <span class="skill-tag">Claude (Anthropic AI)</span>
+                <span class="cert-status status-verified" data-fr="<i class='fas fa-check-circle'></i> Validée" data-en="<i class='fas fa-check-circle'></i> Verified"><i class="fas fa-check-circle"></i> Validée</span>
+                <div>
+                    <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3 data-fr="Networking Basics" data-en="Networking Basics">Networking Basics</h3>
+                    <div class="cert-authority">Cisco Networking Academy</div>
+                    <p data-fr="Maîtrise des protocoles de routage, routage statique/dynamique, commutation (Switching), segmentation de réseaux Ethernet et plan d'adressage complexe IPv4/IPv6." data-en="Mastery of routing protocols, static/dynamic routing, switching, Ethernet network segmentation, and complex IPv4/IPv6 addressing schemas."></p>
+                </div>
+                <div>
+                    <div class="cert-meta">
+                        <div data-fr="<span class='meta-label'>Date d'obtention :</span> <span class='meta-value'>19/06/2026</span>" data-en="<span class='meta-label'>Issue Date:</span> <span class='meta-value'>06/19/2026</span>"></div>
+                    </div>
+                    <div class="skills-wrap">
+                        <span class="skill-tag">Modèle OSI & TCP/IP</span>
+                        <span class="skill-tag" data-fr="Adressage IPv4/IPv6" data-en="IPv4/IPv6 Addressing">Adressage IPv4/IPv6</span>
+                        <span class="skill-tag">Routing & Switching</span>
+                        <span class="skill-tag" data-fr="Sécurité Sans-fil" data-en="Wireless Security">Sécurité Sans-fil</span>
+                    </div>
+                    <div class="pdf-container">
+                        <embed src="Network.pdf" type="application/pdf" />
+                    </div>
+                    <a href="Network.pdf" target="_blank" class="btn-main" data-fr="<i class='fas fa-external-link-alt'></i> Ouvrir le document" data-en="<i class='fas fa-external-link-alt'></i> Open document"><i class="fas fa-external-link-alt"></i> Ouvrir le document</a>
                 </div>
             </div>
 
-            <!-- ANCRE GLOBALE POUR LES PROJETS -->
-            <div id="projects-anchor" style="scroll-margin-top: 100px;"></div>
-
-            <!-- Project 1: SurveyFactory -->
-            <div class="bento-item large reveal" style="border: 2px solid var(--primary);">
-                <div style="display: flex; justify-content: space-between; align-items: start;">
-                    <div>
-                        <h3 style="color: #fff;"><i class="fas fa-factory"></i> SurveyFactory</h3>
-                        <p data-fr="Logiciel industriel complet de gestion de sondages. Architecture Micro-SaaS avec versionnage atomique et traçabilité par <strong>UUID v7</strong>." data-en="Comprehensive industrial survey management software. Micro-SaaS architecture featuring atomic versioning and tracking via <strong>UUID v7</strong>."></p>
-                    </div>
-                    <span class="skill-tag orange" data-fr="PROJET FLAGSHIP WEB" data-en="FLAGSHIP WEB PROJECT">PROJET FLAGSHIP WEB</span>
-                </div>
-                <div class="project-card-mini" style="background: linear-gradient(90deg, #001e3c, #000);">
-                    <div style="display: flex; gap: 10px; justify-content: center;">
-                        <a href="https://roland.pythonanywhere.com/" class="btn-main" data-fr="CLIQUEZ POUR VOIR L'APPLICATION" data-en="CLICK TO VIEW APPLICATION">CLIQUEZ POUR VOIR L'APPLICATION</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2: Client-Server RHEL -->
-            <div class="bento-item large reveal" style="border: 2px solid var(--primary);">
-                <div style="display: flex; justify-content: space-between; align-items: start;">
-                    <div>
-                        <h3 style="color: #fff;" data-fr="<i class='fas fa-network-wired'></i> Architecture Client-Serveur sous RHEL" data-en="<i class='fas fa-network-wired'></i> Client-Server Architecture on RHEL"><i class="fas fa-network-wired"></i> Architecture Client-Serveur sous RHEL</h3>
-                        <p data-fr="Déploiement complet d'une infrastructure réseau sous <strong>Red Hat Enterprise Linux</strong> incluant la gestion dynamique des hôtes et le stockage centralisé." data-en="Full deployment of a network infrastructure running <strong>Red Hat Enterprise Linux</strong>, featuring dynamic host configuration and centralized storage."></p>
-                        <div class="skills-wrap" style="margin-top: 10px;">
-                            <span class="skill-tag" data-fr="Service DHCP" data-en="DHCP Service">Service DHCP</span>
-                            <span class="skill-tag" data-fr="Service FTP" data-en="FTP Service">Service FTP</span>
-                        </div>
-                    </div>
-                    <span class="skill-tag orange" data-fr="PROJET FLAGSHIP LINUX" data-en="FLAGSHIP LINUX PROJECT">PROJET FLAGSHIP LINUX</span>
-                </div>
-                <div class="project-card-mini" style="background: linear-gradient(90deg, #001e3c, #000);">
-                    <div style="display: flex; gap: 10px; justify-content: center;">
-                        <a href="https://rolandarseneguire.github.io/travauxadministrationlinux/" class="btn-main" data-fr="VOIR MON RAPPORT DE CONFIGURATION" data-en="VIEW CONFIGURATION REPORT">VOIR MON RAPPORT DE CONFIGURATION</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3: Bash FTP RHEL -->
-            <div class="bento-item large reveal" style="border: 2px solid var(--primary);">
-                <div style="display: flex; justify-content: space-between; align-items: start;">
-                    <div>
-                        <h3 style="color: #fff;" data-fr="<i class='fas fa-code'></i> Scripts Bash d'automatisation FTP sous RHEL" data-en="<i class='fas fa-code'></i> Bash Scripting for FTP Automation on RHEL"><i class="fas fa-code"></i> Scripts Bash d'automatisation FTP sous RHEL</h3>
-                        <p data-fr="Conception d'un script Bash d'automatisation des flux pour sécuriser et fiabiliser les transferts de fichiers multi-utilisateurs. Gestion centralisée et reproductible des processus d'administration système." data-en="Design of an automation Bash script to secure and optimize multi-user file transfer workflows. Centralized and repeatable system administration processing."></p>
-                    </div>
-                    <span class="skill-tag orange" data-fr="PROJET FLAGSHIP LINUX" data-en="FLAGSHIP LINUX PROJECT">PROJET FLAGSHIP LINUX</span>
-                </div>
-                <div class="project-card-mini" style="background: linear-gradient(90deg, #001e3c, #000);">
-                    <div style="display: flex; gap: 10px; justify-content: center;">
-                        <a href="https://rolandarseneguire.github.io/travauxadministrationlinux/" class="btn-main" data-fr="VOIR MON RAPPORT DE CONFIGURATION" data-en="VIEW CONFIGURATION REPORT">VOIR MON RAPPORT DE CONFIGURATION</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4: UML E-Learning -->
-            <div class="bento-item large reveal" style="border: 2px solid var(--primary);">
-                <div style="display: flex; justify-content: space-between; align-items: start;">
-                    <div>
-                        <h3 style="color: #fff;" data-fr="<i class='fas fa-project-diagram'></i> Modélisation d'un logiciel de E-Learning (UML)" data-en="<i class='fas fa-project-diagram'></i> E-Learning Software Modeling (UML)"><i class="fas fa-project-diagram"></i> Modélisation d'un logiciel de E-Learning (UML)</h3>
-                        <p data-fr="Conception d'architecture via diagrammes de cas d'utilisation, de classes, de séquences et d'activités pour structurer une solution d'apprentissage en ligne moderne." data-en="Architectural software design via Use Case, Class, Sequence, and Activity diagrams to structure a modern online learning platform."></p>
-                        <div class="skills-wrap" style="margin-top: 10px;">
-                            <span class="skill-tag" data-fr="Diagramme de Cas d'Utilisation" data-en="Use Case Diagram">Diagramme de Cas d'Utilisation</span>
-                            <span class="skill-tag" data-fr="Diagramme de Classes" data-en="Class Diagram">Diagramme de Classes</span>
-                            <span class="skill-tag" data-fr="Diagramme de Séquences" data-en="Sequence Diagram">Diagramme de Séquences</span>
-                            <span class="skill-tag" data-fr="Diagramme d'Activités" data-en="Activity Diagram">Diagramme d'Activités</span>
-                        </div>
-                    </div>
-                    <span class="skill-tag orange" data-fr="PROJET FLAGSHIP GÉNIE LOGICIEL" data-en="FLAGSHIP SOFTWARE ENG. PROJECT">PROJET FLAGSHIP GÉNIE LOGICIEL</span>
-                </div>
-                <div class="project-card-mini" style="background: linear-gradient(90deg, #001e3c, #000);">
-                    <span style="font-family: monospace; color: var(--primary-light); font-size: 0.8rem;" data-fr="PROJET EN LOCAL SUR POSTE DE DÉVELOPPEMENT" data-en="LOCAL PROJECT ON DEVELOPMENT WORKSTATION">PROJET EN LOCAL SUR POSTE DE DÉVELOPPEMENT</span>
-                </div>
-            </div>
-
-            <!-- Project 5: Enterprise Security (FortiGate & Oracle Linux) -->
-            <div class="bento-item large reveal" style="border: 2px solid var(--primary);">
-                <div style="display: flex; justify-content: space-between; align-items: start;">
-                    <div>
-                        <h3 style="color: #fff;"
-                            data-fr="<i class='fas fa-shield-alt'></i> Infrastructure de Serveurs d'Entreprise Sécurisée (FortiGate)"
-                            data-en="<i class='fas fa-shield-alt'></i> Secure Enterprise Server Infrastructure (FortiGate)">
-                            <i class="fas fa-shield-alt"></i> Infrastructure de Serveurs d'Entreprise Sécurisée (FortiGate)
-                        </h3>
-                        <p data-fr="Déploiement d'une infrastructure de serveurs d'entreprise en mode minimal (CLI), modélisée et orchestrée sous GNS3 avec VMware comme hyperviseur, protégée par un pare-feu de nouvelle génération FortiGate avec des politiques de sécurité strictes pour la protection des données."
-                           data-en="Deployment of an enterprise server infrastructure in minimal CLI mode, modeled and orchestrated under GNS3 with VMware as the hypervisor, protected by a next-generation FortiGate firewall with strict security policies for data protection."></p>
-
-                        <div class="skills-wrap" style="margin-top: 10px;">
-                            <span class="skill-tag">Security By Design</span>
-                            <span class="skill-tag">Fortinet FortiGate NGFW</span>
-                            <span class="skill-tag">Oracle Linux (mode CLI)</span>
-                            <span class="skill-tag">GNS3 & VMware Workstation Pro</span>
-                            <span class="skill-tag" data-fr="Sécurité Périmétrique & VIP" data-en="Perimeter Security & VIP">Sécurité Périmétrique & VIP</span>
-                            <span class="skill-tag" data-fr="Audit de Flux (Wireshark GNS3)" data-en="Traffic Auditing (Wireshark GNS3)">Audit de Flux (Wireshark GNS3)</span>
-                        </div>
-                    </div>
-                    <span class="skill-tag orange" data-fr="PROJET FLAGSHIP RÉSEAU" data-en="FLAGSHIP NETWORKING PROJECT">PROJET FLAGSHIP RÉSEAU</span>
-                </div>
-                <div class="project-card-mini" style="background: linear-gradient(90deg, #001e3c, #000);">
-                    <div style="display: flex; gap: 10px; justify-content: center;">
-                        <a href="https://rolandarseneguire.github.io/travauxadministrationlinux/" class="btn-main" data-fr="VOIR MON RAPPORT DE CONFIGURATION" data-en="VIEW CONFIGURATION REPORT">VOIR MON RAPPORT DE CONFIGURATION</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 6: Enterprise Security (FortiGate & Windows Server 2022 - AD-DS) -->
-            <div class="bento-item large reveal" style="border: 2px solid var(--primary); background-color: #0b0f19; color: #fff;">
-                <div style="display: flex; justify-content: space-between; align-items: start; gap: 15px; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 280px;">
-                        <h3 style="color: #fff;"
-                            data-fr="<i class='fas fa-shield-alt'></i> Architecture Réseau & Contrôleur de Domaine Sécurisé (FortiGate & WS2022)"
-                            data-en="<i class='fas fa-shield-alt'></i> Secure Network Architecture & Domain Controller (FortiGate & WS2022)">
-                            <i class="fas fa-shield-alt"></i> Architecture Réseau & Contrôleur de Domaine Sécurisé (FortiGate & WS2022)
-                        </h3>
-
-                        <p data-fr="Déploiement d'une infrastructure réseau d'entreprise basée sur Windows Server 2022 en mode Core (AD-DS, DNS, DHCP), orchestrée sous GNS3 et VMware. Sécurisation de bout en bout par un pare-feu FortiGate de nouvelle génération (NGFW) avec inspection SSL profonde, profils antivirus et politiques d'accès strictes."
-                           data-en="Deployment of an enterprise network infrastructure based on Windows Server 2022 in Core mode (AD-DS, DNS, DHCP), orchestrated under GNS3 and VMware. End-to-end security via a Next-Generation FortiGate Firewall (NGFW) featuring deep SSL inspection, antivirus profiles, and strict access policies."></p>
-
-                        <div class="skills-wrap" style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px;">
-                            <span class="skill-tag">Security by Design</span>
-                            <span class="skill-tag">Fortinet FortiGate NGFW</span>
-                            <span class="skill-tag">Windows Server 2022 Core (AD-DS)</span>
-                            <span class="skill-tag">GNS3 & VMware Workstation</span>
-                            <span class="skill-tag" data-fr="Inspection SSL & VIP" data-en="SSL Inspection & VIP">Inspection SSL & VIP</span>
-                            <span class="skill-tag" data-fr="Sécurité Périmétrique" data-en="Perimeter Security">Sécurité Périmétrique</span>
-                            <span class="skill-tag" data-fr="Audit de Flux (Threat Score)" data-en="Traffic Auditing (Threat Score)">Audit de Flux (Threat Score)</span>
-                        </div>
-                    </div>
-
-                    <span class="skill-tag orange" style="white-space: nowrap;"
-                          data-fr="PROJET FLAGSHIP INFRASTRUCTURE & SÉCURITÉ"
-                          data-en="FLAGSHIP INFRASTRUCTURE & SECURITY PROJECT">
-                          PROJET FLAGSHIP INFRASTRUCTURE & SÉCURITÉ
-                    </span>
-                </div>
-
-                <div class="project-card-mini" style="background: linear-gradient(90deg, #0f172a, #020617); margin-top: 20px; padding: 15px; border-radius: 8px;">
-                    <div style="display: flex; gap: 10px; justify-content: center;">
-                        <a href="https://rolandarseneguire.github.io/travauxadministrationlinux/"
-                           class="btn-main"
-                           data-fr="VOIR LE RAPPORT DE CONFIGURATION SÉCURISÉE"
-                           data-en="VIEW SECURE CONFIGURATION REPORT">
-                           VOIR LE RAPPORT DE CONFIGURATION SÉCURISÉE
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 7: SSH Server Security on Windows Server 2022 -->
-            <div class="bento-item large reveal" style="border: 2px solid var(--primary); background-color: #0b0f19; color: #fff;">
-                <div style="display: flex; justify-content: space-between; align-items: start; gap: 15px; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 280px;">
-                        <h3 style="color: #fff;"
-                            data-fr="<i class='fas fa-terminal'></i> Serveur OpenSSH Sécurisé & Filtrage FortiGate (Windows Server 2022 Core)"
-                            data-en="<i class='fas fa-terminal'></i> Secure OpenSSH Server & FortiGate Filtering (Windows Server 2022 Core)">
-                            <i class="fas fa-terminal"></i> Serveur OpenSSH Sécurisé & Filtrage FortiGate (Windows Server 2022 Core)
-                        </h3>
-
-                        <p data-fr="Mise en production et durcissement (<em>Security by Design</em>) d'un serveur OpenSSH sur Windows Server 2022 Core. Implémentation d'une politique stricte de contrôle d'accès avec restriction d'authentification au groupe Active Directory <code>ssh_admins</code>, interdiction explicite du compte root/administrateur direct, port personnalisé (2237) et automatisation PowerShell. Publication via IP Virtuelle (VIP) et règles de filtrage d'un pare-feu FortiGate NGFW sous VMware Workstation Pro."
-                           data-en="Production deployment and hardening (<em>Security by Design</em>) of an OpenSSH server on Windows Server 2022 Core. Implementation of strict access control restricted to the Active Directory <code>ssh_admins</code> group, explicit root/administrator login blocking, custom port (2237), and PowerShell automation. Published via Virtual IP (VIP) and firewall rules on FortiGate NGFW under VMware Workstation Pro."></p>
-
-                        <div class="skills-wrap" style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px;">
-                            <span class="skill-tag">Security by Design</span>
-                            <span class="skill-tag">Windows Server 2022 Core</span>
-                            <span class="skill-tag">OpenSSH Server</span>
-                            <span class="skill-tag">Fortinet FortiGate NGFW</span>
-                            <span class="skill-tag">Active Directory (AD-DS)</span>
-                            <span class="skill-tag" data-fr="Scripting PowerShell" data-en="PowerShell Scripting">Scripting PowerShell</span>
-                            <span class="skill-tag" data-fr="Durcissement SSH (AllowGroups)" data-en="SSH Hardening (AllowGroups)">Durcissement SSH (AllowGroups)</span>
-                            <span class="skill-tag" data-fr="Redirection de Port VIP (2237)" data-en="VIP Port Forwarding (2237)">Redirection de Port VIP (2237)</span>
-                            <span class="skill-tag">VMware Workstation Pro</span>
-                        </div>
-                    </div>
-
-                    <span class="skill-tag orange" style="white-space: nowrap;"
-                          data-fr="PROJET FLAGSHIP SÉCURITÉ SYSTÈME"
-                          data-en="FLAGSHIP SYSTEM SECURITY PROJECT">
-                          PROJET FLAGSHIP SÉCURITÉ SYSTÈME
-                    </span>
-                </div>
-
-                <div class="project-card-mini" style="background: linear-gradient(90deg, #0f172a, #020617); margin-top: 20px; padding: 15px; border-radius: 8px;">
-                    <div style="display: flex; gap: 10px; justify-content: center;">
-                        <a href="https://rolandarseneguire.github.io/travauxadministrationlinux/"
-                           class="btn-main"
-                           data-fr="VOIR LE RAPPORT WINDOWS SERVER SSH"
-                           data-en="VIEW WINDOWS SERVER SSH REPORT">
-                           VOIR LE RAPPORT WINDOWS SERVER SSH
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 8: SSH Server Security on Red Hat Enterprise Linux 10 -->
-            <div class="bento-item large reveal" style="border: 2px solid var(--primary); background-color: #0b0f19; color: #fff;">
-                <div style="display: flex; justify-content: space-between; align-items: start; gap: 15px; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 280px;">
-                        <h3 style="color: #fff;"
-                            data-fr="<i class='fab fa-redhat'></i> Serveur SSH Sécurisé sous Red Hat Enterprise Linux 10 & Pare-feu FortiGate"
-                            data-en="<i class='fab fa-redhat'></i> Secure SSH Server on Red Hat Enterprise Linux 10 & FortiGate Firewall">
-                            <i class="fab fa-redhat"></i> Serveur SSH Sécurisé sous Red Hat Enterprise Linux 10 & Pare-feu FortiGate
-                        </h3>
-
-                        <p data-fr="Déploiement et durcissement d'un serveur OpenSSH sous <strong>Red Hat Enterprise Linux 10 (RHEL 10)</strong> via un fichier de politique de sécurité personnalisé (<code>ssh-policy.conf</code>). Restriction des connexions aux seuls membres du groupe <code>ssh_admins</code>, blocage du compte root, port écoute personnalisé (2271) configuré avec <strong>SELinux</strong> et <strong>firewalld</strong>, et automatisation complète par scripts Bash. Sécurisation périmétrique, NAT/VIP et inspection antivirus/IPS orchestrées par FortiGate NGFW."
-                           data-en="Deployment and hardening of an OpenSSH server on <strong>Red Hat Enterprise Linux 10 (RHEL 10)</strong> using a custom security policy file (<code>ssh-policy.conf</code>). Connection restricted to <code>ssh_admins</code> group members, root login disabled, custom listening port (2271) configured via <strong>SELinux</strong> and <strong>firewalld</strong>, with full Bash script automation. Perimeter security, NAT/VIP, and antivirus/IPS inspection handled by FortiGate NGFW."></p>
-
-                        <div class="skills-wrap" style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px;">
-                            <span class="skill-tag">Security by Design</span>
-                            <span class="skill-tag">Red Hat Enterprise Linux 10 (RHEL 10)</span>
-                            <span class="skill-tag">OpenSSH Server</span>
-                            <span class="skill-tag">Fortinet FortiGate NGFW</span>
-                            <span class="skill-tag">SELinux & Firewalld</span>
-                            <span class="skill-tag" data-fr="Scripting Bash" data-en="Bash Scripting">Scripting Bash</span>
-                            <span class="skill-tag" data-fr="Politique SSH Personnalisée" data-en="Custom SSH Policy">Politique SSH Personnalisée</span>
-                            <span class="skill-tag" data-fr="Redirection de Port VIP (2271)" data-en="VIP Port Forwarding (2271)">Redirection de Port VIP (2271)</span>
-                            <span class="skill-tag">VMware Workstation Pro</span>
-                        </div>
-                    </div>
-
-                    <span class="skill-tag orange" style="white-space: nowrap;"
-                          data-fr="PROJET FLAGSHIP LINUX & SÉCURITÉ"
-                          data-en="FLAGSHIP LINUX & SECURITY PROJECT">
-                          PROJET FLAGSHIP LINUX & SÉCURITÉ
-                    </span>
-                </div>
-
-                <div class="project-card-mini" style="background: linear-gradient(90deg, #0f172a, #020617); margin-top: 20px; padding: 15px; border-radius: 8px;">
-                    <div style="display: flex; gap: 10px; justify-content: center;">
-                        <a href="https://rolandarseneguire.github.io/travauxadministrationlinux/"
-                           class="btn-main"
-                           data-fr="VOIR LE RAPPORT RHEL SSH"
-                           data-en="VIEW RHEL SSH REPORT">
-                           VOIR LE RAPPORT RHEL SSH
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 9: Kea DHCP Server & FortiGate Relay Agent -->
-            <div class="bento-item large reveal" style="border: 2px solid var(--primary); background-color: #0b0f19; color: #fff;">
-                <div style="display: flex; justify-content: space-between; align-items: start; gap: 15px; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 280px;">
-                        <h3 style="color: #fff;"
-                            data-fr="<i class='fas fa-network-wired'></i> Serveur DHCP Kea (RHEL) & Relais DHCP FortiGate NGFW"
-                            data-en="<i class='fas fa-network-wired'></i> Kea DHCP Server (RHEL) & FortiGate NGFW DHCP Relay">
-                            <i class="fas fa-network-wired"></i> Serveur DHCP Kea (RHEL) & Relais DHCP FortiGate NGFW
-                        </h3>
-
-                        <p data-fr="Déploiement et sécurisation d'un serveur DHCP moderne <strong>Kea DHCP</strong> sous Red Hat Enterprise Linux (RHEL), interconnecté via un pare-feu <strong>FortiGate NGFW</strong> agissant comme agent relais (<em>DHCP Relay</em>). Architecture segmentée distribuée orchestrée sous <strong>GNS3</strong> et <strong>VMware Workstation Pro</strong>, permettant l'attribution dynamique sécurisée de baux IP, d'options de sous-réseau et de résolutions DNS aux clients distants <strong>Windows 10 Enterprise</strong> à travers des politiques de sécurité strictes."
-                           data-en="Deployment and securing of a modern <strong>Kea DHCP</strong> server on Red Hat Enterprise Linux (RHEL), interconnected via a <strong>FortiGate NGFW</strong> firewall operating as a <em>DHCP Relay Agent</em>. Distributed segmented architecture orchestrated under <strong>GNS3</strong> and <strong>VMware Workstation Pro</strong>, enabling secure dynamic IP lease allocation, subnet options, and DNS resolution to remote <strong>Windows 10 Enterprise</strong> clients across strict firewall policies."></p>
-
-                        <div class="skills-wrap" style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px;">
-                            <span class="skill-tag">Security by Design</span>
-                            <span class="skill-tag">Red Hat Enterprise Linux (RHEL)</span>
-                            <span class="skill-tag">Kea DHCP Server</span>
-                            <span class="skill-tag">Fortinet FortiGate NGFW</span>
-                            <span class="skill-tag" data-fr="Agent Relais DHCP (DHCP Relay)" data-en="DHCP Relay Agent">Agent Relais DHCP (DHCP Relay)</span>
-                            <span class="skill-tag">GNS3 & VMware Workstation</span>
-                            <span class="skill-tag">Windows 10 Enterprise</span>
-                            <span class="skill-tag" data-fr="Routage & Isolation de Sous-réseaux" data-en="Routing & Subnet Isolation">Routage & Isolation de Sous-réseaux</span>
-                        </div>
-                    </div>
-
-                    <span class="skill-tag orange" style="white-space: nowrap;"
-                          data-fr="PROJET FLAGSHIP ARCHITECTURE RÉSEAU"
-                          data-en="FLAGSHIP NETWORK ARCHITECTURE PROJECT">
-                          PROJET FLAGSHIP ARCHITECTURE RÉSEAU
-                    </span>
-                </div>
-
-                <div class="project-card-mini" style="background: linear-gradient(90deg, #0f172a, #020617); margin-top: 20px; padding: 15px; border-radius: 8px;">
-                    <div style="display: flex; gap: 10px; justify-content: center;">
-                        <a href="https://rolandarseneguire.github.io/travauxadministrationlinux/"
-                           class="btn-main"
-                           data-fr="VOIR LE RAPPORT DHCPSERVER KEA"
-                           data-en="VIEW KEA DHCP SERVER REPORT">
-                           VOIR LE RAPPORT DHCPSERVER KEA
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Education -->
+            <!-- CERT 6 : Introduction to Cybersecurity -->
             <div class="bento-item reveal">
-                <h3 data-fr="<i class='fas fa-graduation-cap'></i> Formation Académique" data-en="<i class='fas fa-graduation-cap'></i> Academic Education">
-                    <i class="fas fa-graduation-cap"></i> Formation Académique
-                </h3>
-                <p data-fr="<strong>Master 1 Génie Informatique</strong><br><br><strong>Licence 3 Informatique</strong><br>(Mathématiques-Informatique)" 
-                   data-en="<strong>Master 1 in Computer Engineering</strong><br><br><strong>Bachelor in Computer Science</strong><br>(Mathematics and Computer Science)">
-                </p>
+                <span class="cert-status status-verified" data-fr="<i class='fas fa-check-circle'></i> Validée" data-en="<i class='fas fa-check-circle'></i> Verified"><i class="fas fa-check-circle"></i> Validée</span>
+                <div>
+                    <div class="cert-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3 data-fr="Introduction to Cybersecurity" data-en="Introduction to Cybersecurity">Introduction to Cybersecurity</h3>
+                    <div class="cert-authority">Cisco Networking Academy</div>
+                    <p data-fr="Assimilation des piliers de la sécurité de l'information (C-I-A), identification des vecteurs d'attaques courants et des principes de protection des données d'entreprise." data-en="Understanding the core pillars of information security (C-I-A), identifying common attack vectors, and implementing corporate data protection principles."></p>
+                </div>
+                <div>
+                    <div class="cert-meta">
+                        <div data-fr="<span class='meta-label'>Date d'obtention :</span> <span class='meta-value'>07/06/2026</span>" data-en="<span class='meta-label'>Issue Date:</span> <span class='meta-value'>06/07/2026</span>"></div>
+                    </div>
+                    <div class="skills-wrap">
+                        <span class="skill-tag" data-fr="Vecteurs d'Attaques" data-en="Attack Vectors">Vecteurs d'Attaques</span>
+                        <span class="skill-tag" data-fr="Cryptographie Basics" data-en="Cryptography Basics">Cryptographie Basics</span>
+                        <span class="skill-tag" data-fr="Sécurisation Data" data-en="Data Security">Sécurisation Data</span>
+                        <span class="skill-tag" data-fr="Audit de Vulnérabilités" data-en="Vulnerability Assessment">Audit de Vulnérabilités</span>
+                    </div>
+                    <div class="pdf-container">
+                        <embed src="Cybersecurity.pdf" type="application/pdf" />
+                    </div>
+                    <a href="Cybersecurity.pdf" target="_blank" class="btn-main" data-fr="<i class='fas fa-external-link-alt'></i> Ouvrir le document" data-en="<i class='fas fa-external-link-alt'></i> Open document"><i class="fas fa-external-link-alt"></i> Ouvrir le document</a>
+                </div>
             </div>
 
-            <!-- IT Certs -->
+            <!-- CERT 7 : Traitement Numérique du Signal -->
             <div class="bento-item reveal">
-                <h3 data-fr="<i class='fas fa-certificate'></i> Certifications IT" data-en="<i class='fas fa-certificate'></i> IT Certifications"><i class="fas fa-certificate"></i> Certifications IT</h3>
-                <div class="skills-wrap" style="margin-top: 10px;">
-                    <span class="skill-tag" data-fr="Bases du Matériel Informatique" data-en="Hardware Fundamentals">Bases du Matériel Informatique</span>
-                    <span class="skill-tag" data-fr="Notions fondamentales sur les réseaux" data-en="Networking Fundamentals">Notions fondamentales sur les réseaux</span>
-                    <span class="skill-tag" data-fr="Introduction à la cybersécurité" data-en="Introduction to Cybersecurity">Introduction à la cybersécurité</span>
+                <span class="cert-status status-verified" data-fr="<i class='fas fa-check-circle'></i> Validée" data-en="<i class='fas fa-check-circle'></i> Verified"><i class="fas fa-check-circle"></i> Validée</span>
+                <div>
+                    <div class="cert-icon"><i class="fas fa-wave-square"></i></div>
+                    <h3 data-fr="Traitement Numérique du Signal" data-en="Digital Signal Processing">Traitement Numérique du Signal</h3>
+                    <div class="cert-authority">MathWorks</div>
+                    <p data-fr="Analyse spectrale et temporelle des signaux algorithmiques. Implémentation pratique de la transformée de Fourier discrète rapide (FFT) et filtres RIF/RII." data-en="Spectral and temporal analysis of algorithmic signals. Hands-on implementation of the Fast Fourier Transform (FFT) and FIR/IIR filters."></p>
                 </div>
-                <div class="project-card-mini" style="background: linear-gradient(90deg, #001e3c, #000);">
-                    <div style="display: flex; gap: 10px; justify-content: center;">
-                        <a href="https://rolandarseneguire.github.io/certificate/" class="btn-main" data-fr="VOIR MES CERTIFICATS" data-en="VIEW MY CERTIFICATES">VOIR MES CERTIFICATS</a>
+                <div>
+                    <div class="cert-meta">
+                        <div data-fr="<span class='meta-label'>Date d'obtention :</span> <span class='meta-value'>03/11/2025</span>" data-en="<span class='meta-label'>Issue Date:</span> <span class='meta-value'>11/03/2025</span>"></div>
                     </div>
+                    <div class="skills-wrap">
+                        <span class="skill-tag">Signal Processing</span>
+                        <span class="skill-tag" data-fr="Transformée FFT" data-en="FFT Transform">Transformée FFT</span>
+                        <span class="skill-tag" data-fr="Algorithmes Filtrage" data-en="Filtering Algorithms">Algorithmes Filtrage</span>
+                    </div>
+                    <div class="code-preview">
+                        <code style="color: var(--primary-light); font-size: 0.72rem; display: block;">t = 1 : 25;</code>
+                        <code style="color: var(--primary-light); font-size: 0.72rem; display: block;">a = randi([1,25],1,size(t,2)) + sin(2*pi*0.1*t);</code>
+                        <code style="color: var(--primary-light); font-size: 0.72rem; display: block;">stem(t,a);</code>
+                    </div>
+                    <div class="pdf-container">
+                        <embed src="TraitementSignal.pdf" type="application/pdf" />
+                    </div>
+                    <a href="TraitementSignal.pdf" target="_blank" class="btn-main" data-fr="<i class='fas fa-external-link-alt'></i> Ouvrir le document" data-en="<i class='fas fa-external-link-alt'></i> Open document"><i class="fas fa-external-link-alt"></i> Ouvrir le document</a>
                 </div>
             </div>
 
-            <!-- Collaboration CTA -->
-            <div class="bento-item large reveal">
-                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 20px;">
-                    <div>
-                        <h3 data-fr="<i class='fas fa-handshake'></i> Travaillons ensemble" data-en="<i class='fas fa-handshake'></i> Let's Work Together"><i class="fas fa-handshake"></i> Travaillons ensemble</h3>
-                        <p data-fr="Disponible pour des opportunités d'<strong>emploi</strong> ou de <strong>stage</strong> en technologies de l'information." data-en="Available for <strong>job</strong> or <strong>internship</strong> opportunities in Information Technology."></p>
+            <!-- CERT 8 : MATLAB Certified Associate -->
+            <div class="bento-item reveal">
+                <span class="cert-status status-verified" data-fr="<i class='fas fa-check-circle'></i> Validée" data-en="<i class='fas fa-check-circle'></i> Verified"><i class="fas fa-check-circle"></i> Validée</span>
+                <div>
+                    <div class="cert-icon"><i class="fas fa-square-root-variable"></i></div>
+                    <h3 data-fr="MATLAB Certified Associate" data-en="MATLAB Certified Associate">MATLAB Certified Associate</h3>
+                    <div class="cert-authority">MathWorks</div>
+                    <p data-fr="Validation des fondations en programmation scientifique, modélisation de données complexes, manipulations de matrices et génération d'analyses graphiques dynamiques." data-en="Validation of foundations in scientific programming, complex data modeling, matrix manipulations, and dynamic graphical analysis generation."></p>
+                </div>
+                <div>
+                    <div class="cert-meta">
+                        <div data-fr="<span class='meta-label'>Date d'obtention :</span> <span class='meta-value'>19/10/2025</span>" data-en="<span class='meta-label'>Issue Date:</span> <span class='meta-value'>10/19/2025</span>"></div>
                     </div>
-                    <div style="display: flex; gap: 10px;">
-                        <a href="mailto:guireroland623@gmail.com" class="btn-main" data-fr="ME CONTACTER" data-en="CONTACT ME">ME CONTACTER</a>
-                        <a href="Arsene_Roland_GUIRE.pdf" download="Arsène_Roland_GUIRE" class="btn-main" style="background: transparent; border: 1px solid var(--primary-light); color: var(--primary-light);" data-fr="MON CV" data-en="MY CV">MON CV</a>
+                    <div class="skills-wrap">
+                        <span class="skill-tag" data-fr="Calcul Matriciel" data-en="Matrix Calculus">Calcul Matriciel</span>
+                        <span class="skill-tag">Data Modeling</span>
+                        <span class="skill-tag" data-fr="Visualisation Graphique" data-en="Graphical Visualization">Visualisation Graphique</span>
+                        <span class="skill-tag" data-fr="Programmation Scripts" data-en="Script Programming">Programmation Scripts</span>
                     </div>
+                    <div class="pdf-container">
+                        <embed src="MatLAB.pdf" type="application/pdf" />
+                    </div>
+                    <a href="MatLAB.pdf" target="_blank" class="btn-main" data-fr="<i class='fas fa-external-link-alt'></i> Ouvrir le document" data-en="<i class='fas fa-external-link-alt'></i> Open document"><i class="fas fa-external-link-alt"></i> Ouvrir le document</a>
                 </div>
             </div>
 
@@ -582,7 +399,7 @@
     </div>
 
     <footer style="text-align: center; padding: 60px; color: var(--text-light); font-size: 0.85rem; border-top: 1px solid var(--border);">
-        <p data-fr="© 2026 SystemFactory, Arsène Roland GUIRE. Tous droits réservés." data-en="© 2026 SystemFactory, Arsène Roland GUIRE. All rights reserved."></p>
+        <p data-fr="© 2026 SystemFactory | Arsène Roland GUIRE. Document officiel de certification des compétences." data-en="© 2026 SystemFactory | Arsène Roland GUIRE. Official skills certification document."></p>
     </footer>
 
     <script>
@@ -610,10 +427,9 @@
             updateLanguage(currentLang);
         });
 
-        // SYSTEME LOADER & INITIALISATION LANGUE
+        // SYSTEME LOADER
         window.addEventListener('load', () => {
             updateLanguage(currentLang);
-
             const loader = document.getElementById('loader');
             setTimeout(() => {
                 loader.style.opacity = '0';
